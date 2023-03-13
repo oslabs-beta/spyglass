@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
-import MetricPanel from '../components/MetricPanel';
+import ClusterMetricsDashboard from '../components/dashboards/ClusterMetricsDashboard';
 import '../styles/App.css';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <NavBar />
       <SideBar />
-      {/* <MetricPanel /> */}
+      <ClusterMetricsDashboard />
     </div>
   );
 }

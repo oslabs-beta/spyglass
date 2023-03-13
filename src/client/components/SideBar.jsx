@@ -8,7 +8,7 @@ import {
   ListItemButton,
   ListItemIcon
 } from '@mui/material';
-import spyglass from '../../../assets/spyglass.png';
+import spyglass from '../../../assets/spyglass-logo.png';
 
 const drawerWidth = 240;
 function SideBar() {
@@ -25,7 +25,7 @@ function SideBar() {
       variant="permanent"
       anchor="left"
     >
-      <img src={spyglass} className="spyglass-logo" alt="Spyglass logo" />
+      <img src={spyglass} className="spyglass-logo" alt="spyglass-logo" />
       <Toolbar />
       <List>
         <ListItem disablePadding>
