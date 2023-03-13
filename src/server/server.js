@@ -2,6 +2,11 @@ import express from 'express';
 const app = express();
 const PORT = 3000;
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// serve CSS and JS files from assets folder
+app.use('/', express.static(path.resolve(__dirname, '../assets')));
+
 //global err handler
 // app.use((err, req, res) => {
 //     const defaultErr = {

@@ -1,4 +1,4 @@
-export function MetricPanel() {
+function MetricPanel() {
   return (
     <div className="metric-panel">
       <iframe
@@ -10,3 +10,5 @@ export function MetricPanel() {
     </div>
   );
 }
+
+export default MetricPanel;

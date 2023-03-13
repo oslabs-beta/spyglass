@@ -1,17 +1,17 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
 import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import ListItem from '@mui/material';
-import ListItemButton from '@mui/material';
-import ListItemIcon from '@mui/material';
-import { Link } from '@mui/material';
+import {
+  ListItemText,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon
+} from '@mui/material';
+import spyglass from '../../../assets/spyglass.png';
 
 const drawerWidth = 240;
-
-export default function Drawer() {
+function SideBar() {
   return (
     <Drawer
       sx={{
@@ -25,6 +25,7 @@ export default function Drawer() {
       variant="permanent"
       anchor="left"
     >
+      <img src={spyglass} className="spyglass-logo" alt="Spyglass logo" />
       <Toolbar />
       <List>
         <ListItem disablePadding>
@@ -49,3 +50,5 @@ export default function Drawer() {
     </Drawer>
   );
 }
+
+export default SideBar;
