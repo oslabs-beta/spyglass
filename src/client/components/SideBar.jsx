@@ -9,7 +9,7 @@ import {
   ListItemIcon
 } from '@mui/material';
 import { Link } from 'react-router-dom';
-import spyglass from '../../../assets/spyglass-blue-logo.png';
+import spyglass from '../../../assets/logo-no-background.png';
 
 const drawerWidth = 240;
 function SideBar() {
