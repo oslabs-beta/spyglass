@@ -10,4 +10,5 @@ const dashboardURLs = [
   'http://localhost:8000/d/-K2iWI-4k/node-exporter-nodes?orgId=1&refresh=30s&from=now-24h&to=now&viewPanel=9'
 ];
 
+
 export default dashboardURLs;
