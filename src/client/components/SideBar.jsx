@@ -8,7 +8,8 @@ import {
   ListItemButton,
   ListItemIcon
 } from '@mui/material';
-import spyglass from '../../../assets/logo-no-background.png';
+import { Link } from 'react-router-dom';
+import spyglass from '../../../assets/spyglass-blue-logo.png';
 
 const drawerWidth = 240;
 function SideBar() {
@@ -31,13 +32,17 @@ function SideBar() {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>{/* {icon for } */}</ListItemIcon>
-            <ListItemText primary="Cluster Metrics" />
+            <Link to="/cluster">
+              <ListItemText primary="Cluster Metrics" />
+            </Link>
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>{/* {icon for } */}</ListItemIcon>
-            <ListItemText primary="Cost Analysis" />
+            <Link to="/cost">
+              <ListItemText primary="Cost Analysis" />
+            </Link>
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>

@@ -5,3 +5,10 @@
 .NavBar {
   background-color: black;
 }
+
+.metric-panel {
+  text-align: center;
+}
+.cluster {
+  text-align: center;
+}
