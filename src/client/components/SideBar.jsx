@@ -15,6 +15,7 @@ const drawerWidth = 240;
 function SideBar() {
   return (
     <Drawer
+      className="sideBar"
       sx={{
         width: drawerWidth,
         flexShrink: 0,
