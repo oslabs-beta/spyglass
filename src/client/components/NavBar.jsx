@@ -6,10 +6,11 @@ function NavBar() {
     <AppBar
       className="NavBar"
       position="static"
-      sx={{ bgcolor: '#0074d9', boxShadow: 'none' }}
+      color="DarkBlue"
+      sx={{ boxShadow: 'none' }}
     >
       <Toolbar>
-        <Button color="inherit">Logout</Button>
+        <Button color="White">Logout</Button>
       </Toolbar>
     </AppBar>
   );

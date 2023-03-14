@@ -5,7 +5,7 @@ import { grid } from '@mui/system';
 
 function ClusterMetricsDashboard() {
   const panels = dashboardURLs.map((url) => (
-    <Grid>
+    <Grid sx={{ boxShadow: 5 }}>
       <MetricPanel url={url} key={url} />
     </Grid>
   ));

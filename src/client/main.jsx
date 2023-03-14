@@ -9,6 +9,9 @@ import { ThemeProvider, createTheme } from '@mui/material';
 // create custom theme from mood icons
 const theme = createTheme({
   palette: {
+    White: {
+      main: '#fff'
+    },
     DarkGray: {
       main: '#4d4d4d'
     },
@@ -16,7 +19,7 @@ const theme = createTheme({
       main: '#e0e0e0'
     },
     Gray: {
-      main: '##c6cdd2'
+      main: '#c6cdd2'
     },
     DarkBlue: {
       main: '#132c44'
