@@ -8,7 +8,7 @@ import {
   ListItemButton,
   ListItemIcon
 } from '@mui/material';
-import spyglass from '../../../assets/spyglass-logo.png';
+import spyglass from '../../../assets/logo-no-background.png';
 
 const drawerWidth = 240;
 function SideBar() {
