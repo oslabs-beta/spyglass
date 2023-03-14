@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Button } from '@mui/material';
 
 function NavBar() {
   return (
-    <AppBar className="NavBar" position="static" sx={{ bgcolor: 'black' }}>
+    <AppBar className="NavBar" position="static" sx={{ bgcolor: '#0074d9' }}>
       <Toolbar>
         <Button color="inherit">Logout</Button>
       </Toolbar>
