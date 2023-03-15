@@ -6,6 +6,9 @@
   align-items: end;
   padding: 0 2rem;
 }
+.NavBar button:hover {
+  color: #0074d9;
+}
 body {
   background: radial-gradient(#c6cdd2, #132c44);
 }
@@ -13,7 +16,26 @@ body {
   margin-left: 240px;
   margin-top: 100px;
 }
+.spyglass-logo {
+  padding: 2rem;
+}
+/* styling for links in sideBar */
 .sideBar a {
   text-decoration: none;
   color: #fff;
+}
+.sideBar a:hover {
+  color: #0074d9;
+}
+.sideBar a span {
+  font-size: 1.3rem;
+}
+/* icon in sideBar */
+.MuiSvgIcon-root {
+  color: #fff;
+}
+
+/* spacing between icon and text in sideBar */
+.MuiButtonBase-root div {
+  min-width: 35px;
 }
