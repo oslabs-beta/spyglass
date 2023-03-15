@@ -10,7 +10,7 @@ function NavBar() {
       sx={{ boxShadow: 'none' }}
     >
       <Toolbar>
-        <Button color="White">Logout</Button>
+        <Button color="White">Sign out</Button>
       </Toolbar>
     </AppBar>
   );
