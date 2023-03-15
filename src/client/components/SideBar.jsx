@@ -26,7 +26,7 @@ function SideBar() {
           width: drawerWidth,
           boxSizing: 'border-box',
           border: 'none',
-          bgcolor: '#132c44',
+          bgcolor: '#1a1a1a',
           color: '#fff'
         }
       }}

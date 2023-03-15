@@ -6,7 +6,7 @@ function NavBar() {
     <AppBar
       className="NavBar"
       position="static"
-      color="DarkBlue"
+      color="Black"
       sx={{ boxShadow: 'none' }}
     >
       <Toolbar>
