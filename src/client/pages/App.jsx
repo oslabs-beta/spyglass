@@ -14,8 +14,8 @@ function App() {
       <SideBar />
       <Box className="main">
         <Routes>
-          <Route path="/cluster" element={<ClusterMetricsDashboard />} />
           <Route path="/cost" element={<CostAnalysisDashboard />} />
+          <Route path="/" element={<ClusterMetricsDashboard />} />
         </Routes>
       </Box>
     </div>
