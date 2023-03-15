@@ -1,24 +1,15 @@
-import NavBar from '../components/NavBar';
-import SideBar from '../components/SideBar';
-import MetricPanel from '../components/MetricPanel';
-import Box from '@mui/material/Box';
-import ClusterMetricsDashboard from '../components/dashboards/ClusterMetricsDashboard';
-import CostAnalysisDashboard from '../components/dashboards/CostAnalysisDashboard';
 import { Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import Login from './Login';
+import Signup from './Signup';
 import '../styles/App.css';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <SideBar />
-      <Box className="main">
-        <Routes>
-          <Route path="/cost" element={<CostAnalysisDashboard />} />
-          <Route path="/" element={<ClusterMetricsDashboard />} />
-        </Routes>
-      </Box>
-    </div>
+    <Routes>
+      <Route path="/home/*" element={<Home />} />
+      <Route path="/" element={<Login />} />
+    </Routes>
   );
 }
 

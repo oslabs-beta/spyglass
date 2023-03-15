@@ -6,7 +6,7 @@
   align-items: end;
   padding: 0 2rem;
 }
-body {
+.home {
   background: radial-gradient(#c6cdd2, #132c44);
 }
 .main {
