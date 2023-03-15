@@ -8,7 +8,9 @@ import {
   ListItemButton,
   ListItemIcon
 } from '@mui/material';
-
+import NotificationImportantIcon from '@mui/icons-material/NotificationImportant';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import PriceChangeIcon from '@mui/icons-material/PriceChange';
 import { Link } from 'react-router-dom';
 import spyglass from '../../../assets/logo-no-background.png';
 
@@ -36,7 +38,9 @@ function SideBar() {
       <List>
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>{/* {icon for} */}</ListItemIcon>
+            <ListItemIcon>
+              <BarChartIcon />
+            </ListItemIcon>
             <Link to="/">
               <ListItemText primary="Cluster Metrics" />
             </Link>
@@ -44,7 +48,9 @@ function SideBar() {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>{/* {icon for } */}</ListItemIcon>
+            <ListItemIcon>
+              <PriceChangeIcon />
+            </ListItemIcon>
             <Link to="/cost">
               <ListItemText primary="Cost Analysis" />
             </Link>
@@ -52,8 +58,12 @@ function SideBar() {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>{/* {icon for } */}</ListItemIcon>
-            <ListItemText primary="Alerts" />
+            <ListItemIcon>
+              <NotificationImportantIcon />
+            </ListItemIcon>
+            <Link>
+              <ListItemText primary="Alerts" />
+            </Link>
           </ListItemButton>
         </ListItem>
       </List>
