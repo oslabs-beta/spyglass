@@ -2,13 +2,6 @@
   padding: 0;
   margin: 0;
 }
-.NavBar {
-  align-items: end;
-  padding: 0 2rem;
-}
-.NavBar button:hover {
-  color: #0074d9;
-}
 body {
   background:#1a1a1af4; 
 }
@@ -16,9 +9,16 @@ body {
   margin-left: 15rem;
   margin-top: 2rem;
 }
-.spyglass-logo {
-  padding: 1.5rem;
+
+/* styling for navBar*/
+.NavBar {
+  align-items: end;
+  padding: 0 2rem;
 }
+.NavBar button:hover {
+  color: #0074d9;
+}
+
 /* styling for links in sideBar */
 .sideBar a {
   text-decoration: none;
@@ -30,6 +30,7 @@ body {
 .sideBar a span {
   font-size: 1.4rem;
 }
+
 /* icon in sideBar */
 .MuiSvgIcon-root {
   color: #0074d9;
@@ -38,4 +39,10 @@ body {
 /* spacing between icon and text in sideBar */
 .MuiButtonBase-root div {
   min-width: 35px;
+}
+
+/* styling for spgylass logo in sideBar */
+.spyglass-logo {
+  padding: 1.5rem;
+  margin-top: 3rem;
 }

@@ -36,6 +36,7 @@ function SideBar() {
       <img src={spyglass} className="spyglass-logo" alt="spyglass-logo" />
       <Toolbar />
       <List>
+        {/* Cluster Metric List Item */}
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
@@ -46,6 +47,7 @@ function SideBar() {
             </Link>
           </ListItemButton>
         </ListItem>
+        {/* Cost Analysis List Item */}
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
@@ -56,6 +58,7 @@ function SideBar() {
             </Link>
           </ListItemButton>
         </ListItem>
+        {/* Alerts List Item */}
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
