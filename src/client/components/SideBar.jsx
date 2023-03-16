@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Toolbar from '@mui/material/Toolbar';
-import Drawer from '@mui/material/Drawer';
 import {
+  Toolbar,
+  Drawer,
   ListItemText,
   List,
   ListItem,
@@ -12,7 +12,7 @@ import NotificationImportantIcon from '@mui/icons-material/NotificationImportant
 import BarChartIcon from '@mui/icons-material/BarChart';
 import PriceChangeIcon from '@mui/icons-material/PriceChange';
 import { Link } from 'react-router-dom';
-import spyglass from '../../../assets/logo-no-background.png';
+import AnimatedLogo from './AnimatedLogo';
 
 const drawerWidth = 240;
 function SideBar() {
@@ -33,7 +33,7 @@ function SideBar() {
       variant="permanent"
       anchor="left"
     >
-      <img src={spyglass} className="spyglass-logo" alt="spyglass-logo" />
+      <AnimatedLogo />
       <Toolbar />
       <List>
         {/* Cluster Metric List Item */}

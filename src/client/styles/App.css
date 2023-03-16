@@ -43,6 +43,7 @@ body {
 
 /* styling for spgylass logo in sideBar */
 .spyglass-logo {
-  padding: 1.5rem;
-  margin-top: 3rem;
+  height: auto;
+  max-width: 100%;
+  margin-top: 4rem; 
 }
