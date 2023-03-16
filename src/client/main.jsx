@@ -12,20 +12,14 @@ const theme = createTheme({
     White: {
       main: '#fff'
     },
-    DarkGray: {
-      main: '#4d4d4d'
-    },
-    LightGray: {
-      main: '#e0e0e0'
+    Black: {
+      main: '#1a1a1a'
     },
     Gray: {
       main: '#c6cdd2'
     },
     DarkBlue: {
       main: '#132c44'
-    },
-    LightBlue: {
-      main: '#0074d9'
     }
   }
 });
