@@ -5,9 +5,6 @@ Spyglas is an open-source tool that allows users to monitor Kubernetes cluster m
 Spyglass is actively being developed with the support of OSLabs and we are always looking for contributors and feedback.
 
 <br/>
-[GitHub](https://github.com/oslabs-beta/spyglass) 
-
-<br/>
 
 <div align="center">
 <!-- https://ileriayo.github.io/markdown-badges/#markdown-badges -->
