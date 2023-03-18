@@ -1,7 +1,7 @@
 ## Spyglass
 
 ## What is Spyglass?
-Spyglas is an open-source tool that allows users to monitor Kubernetes cluster metrics and track cluster deployment costs in a centralized location. 
+Spyglas is an open-source tool that allows users to monitor Kubernetes cluster metrics and track cluster deployment costs in a centralized location. Just as spyglass helps sailors observe and explore the world around them, Spyglass will help take care of all your Kubernetes needs.
 Spyglass is actively being developed with the support of OSLabs and we are always looking for contributors and feedback.
 [GitHub](https://github.com/oslabs-beta/spyglass) 
 
