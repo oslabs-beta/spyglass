@@ -9,6 +9,7 @@ import '../styles/App.css';
 
 function App() {
   return (
+    // display app with navbar, sidebar, and routes to dashboards
     <div className="App">
       <NavBar />
       <SideBar />
