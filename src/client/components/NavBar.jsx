@@ -10,11 +10,11 @@ function NavBar() {
     <AppBar
       className="NavBar"
       position="static"
-      color="DarkBlue"
+      color="Black"
       sx={{ boxShadow: 'none' }}
     >
       <Toolbar>
-        <Button color="White" onClick={auth.signOut}>Logout</Button>
+        <Button color="White" onClick={auth.signOut}>Sign Out</Button>
       </Toolbar>
     </AppBar>
   );

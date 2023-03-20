@@ -1,7 +1,6 @@
 import MetricPanel from '../MetricPanel';
 import dashboardURLs from '../../../constants';
 import Grid from '@mui/material/Grid';
-import { grid } from '@mui/system';
 
 function ClusterMetricsDashboard() {
   const panels = dashboardURLs.map((url) => (
@@ -14,8 +13,8 @@ function ClusterMetricsDashboard() {
       className="clusterMetricsDashboard"
       container
       direction="row"
-      rowGap={2}
-      columnGap={2}
+      rowGap={5}
+      columnGap={5}
       justifyContent="center"
       alignItems="center"
     >
