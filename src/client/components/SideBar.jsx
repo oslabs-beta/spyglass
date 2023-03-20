@@ -37,7 +37,7 @@ function SideBar() {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>{/* {icon for} */}</ListItemIcon>
-            <Link to="/home">
+            <Link to="/">
               <ListItemText primary="Cluster Metrics" />
             </Link>
           </ListItemButton>
@@ -45,7 +45,7 @@ function SideBar() {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>{/* {icon for } */}</ListItemIcon>
-            <Link to="/home/cost">
+            <Link to="/cost">
               <ListItemText primary="Cost Analysis" />
             </Link>
           </ListItemButton>
