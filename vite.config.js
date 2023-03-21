@@ -7,16 +7,13 @@ import { resolve } from 'path';
 export default defineConfig({
   plugins: [react(), Terminal()],
   server: {
-    port: 8080,
-    hmr: {
-      host: '0.0.0.0'
-    }
-  },
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html')
-      }
-    }
+    port: 8080
   }
+  // build: {
+  //   rollupOptions: {
+  //     input: {
+  //       main: resolve(__dirname, 'index.html')
+  //     }
+  //   }
+  // }
 });

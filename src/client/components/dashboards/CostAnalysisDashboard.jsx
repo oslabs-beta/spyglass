@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-// import { terminal } from 'virtual:terminal';
+import { terminal } from 'virtual:terminal';
 
-const costURL = [
-  'http://localhost:9090/model/allocation?window=15d&aggregate=cluster'
-];
+const costURL =
+  'http://localhost:9090/model/allocation?aggregate=cluster&window=7d';
 
 function CostAnalysisDashboard() {
-  const [costs, setCosts] = useState({});
+  // const [costs, setCosts] = useState({});
   // initialize cost categories
   let totalCPU = 0;
   let totalRAM = 0;
@@ -14,10 +13,7 @@ function CostAnalysisDashboard() {
   // fetch cost data from Kubecost
   fetch(costURL)
     .then((res) => res.json())
-    .then((data) => {
-      costsArr = data.data;
-      window.console.log(costsArr);
-    })
+    .then((data) => terminal.log(data.data))
     .catch((err) => terminal.log('error in fetching cost data: ', err));
   // parse through fetched data
   for (const metricObj of costsArr) {
@@ -32,9 +28,7 @@ function CostAnalysisDashboard() {
     'RAM Cost': totalRAM,
     'PV Cost': totalPV
   };
-  window.console.log(costsData);
-  setCosts(costsData);
+  // setCosts(costsData);
   return <h1 className="cluster">Cost Dashboard</h1>;
 }
-console.log('hello');
 export default CostAnalysisDashboard;
