@@ -40,7 +40,7 @@ function SideBar() {
               <BarChartIcon />
             </ListItemIcon>
             <Link to="/">
-              <ListItemText primary="Cluster Metrics" />
+              <ListItemText primary="Local Cluster Metrics" />
             </Link>
           </ListItemButton>
         </ListItem>
@@ -62,7 +62,7 @@ function SideBar() {
               <NotificationImportantIcon />
             </ListItemIcon>
             <Link>
-              <ListItemText primary="Alerts" />
+              <ListItemText primary="Cloud Cluster Metrics" />
             </Link>
           </ListItemButton>
         </ListItem>
