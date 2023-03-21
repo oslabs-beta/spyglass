@@ -7,7 +7,7 @@ body {
 }
 .main {
   margin-left: 15rem;
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 
 /* styling for navBar*/
@@ -28,7 +28,8 @@ body {
   color: #0074d9;
 }
 .sideBar a span {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
 }
 
 /* icon in sideBar */
@@ -45,5 +46,6 @@ body {
 .spyglass-logo {
   height: auto;
   max-width: 100%;
-  margin-top: 4rem; 
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }

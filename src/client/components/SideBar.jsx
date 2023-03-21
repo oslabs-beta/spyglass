@@ -33,7 +33,7 @@ function SideBar() {
     >
       <AnimatedLogo />
       <List>
-        {/* Cluster Metric List Item */}
+        {/* Local Cluster Metric List Item */}
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
@@ -41,6 +41,17 @@ function SideBar() {
             </ListItemIcon>
             <Link to="/">
               <ListItemText primary="Local Cluster Metrics" />
+            </Link>
+          </ListItemButton>
+        </ListItem>
+        {/* Cloud Cluster Metrics List Item */}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <NotificationImportantIcon />
+            </ListItemIcon>
+            <Link>
+              <ListItemText primary="Cloud Cluster Metrics" />
             </Link>
           </ListItemButton>
         </ListItem>
@@ -52,17 +63,6 @@ function SideBar() {
             </ListItemIcon>
             <Link to="/cost">
               <ListItemText primary="Cost Analysis" />
-            </Link>
-          </ListItemButton>
-        </ListItem>
-        {/* Alerts List Item */}
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <NotificationImportantIcon />
-            </ListItemIcon>
-            <Link>
-              <ListItemText primary="Cloud Cluster Metrics" />
             </Link>
           </ListItemButton>
         </ListItem>
