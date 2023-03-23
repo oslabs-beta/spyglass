@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CostTable from '../CostTable';
 // import { terminal } from 'virtual:terminal';
 
@@ -19,33 +19,35 @@ function CostAnalysisDashboard() {
       if (key === 'pvCost') totalPV += obj['pvCost'];
     }
   };
-  const fetchData = async () => {
-    try {
-      // fetch cost data from Kubecost
-      const response = await fetch(costURL);
-      const data = await response.json();
-      const costArray = data.data;
-      // parse through fetched data
-      costArray.forEach((obj) => {
-        for (const cluster in obj) {
-          getCosts(obj[cluster]);
-        }
-      });
-      const totalData = {
-        totalCPU,
-        totalRAM,
-        totalPV
-      };
-      console.log(totalData);
-      // update state with new costsData
-      setCostData(totalData);
-    } catch (err) {
-      // catch any errors
-      console.log('error in fetching cost data: ', err);
-    }
-  };
-  // invoke async func fetchData defined above
-  fetchData();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // fetch cost data from Kubecost
+        const response = await fetch(costURL);
+        const data = await response.json();
+        const costArray = data.data;
+        // parse through fetched data
+        costArray.forEach((obj) => {
+          for (const cluster in obj) {
+            getCosts(obj[cluster]);
+          }
+        });
+        const totalData = {
+          totalCPU,
+          totalRAM,
+          totalPV
+        };
+        // update state with new costsData
+        setCostData(totalData);
+      } catch (err) {
+        // catch any errors
+        console.log('error in fetching cost data: ', err);
+      }
+    };
+    // invoke async func fetchData defined above
+    fetchData();
+  }, []);
+  console.log('costData', costData);
   return <div>{costData && <CostTable costData={costData} />}</div>;
 }
 export default CostAnalysisDashboard;
