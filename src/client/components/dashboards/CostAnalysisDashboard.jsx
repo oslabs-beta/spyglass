@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { terminal } from 'virtual:terminal';
+// import { terminal } from 'virtual:terminal';
 
 const costURL =
   'http://localhost:9090/model/allocation?aggregate=cluster&window=7d';
@@ -10,25 +10,46 @@ function CostAnalysisDashboard() {
   let totalCPU = 0;
   let totalRAM = 0;
   let totalPV = 0;
-  // fetch cost data from Kubecost
-  fetch(costURL)
-    .then((res) => res.json())
-    .then((data) => terminal.log(data.data))
-    .catch((err) => terminal.log('error in fetching cost data: ', err));
-  // parse through fetched data
-  for (const metricObj of costsArr) {
-    for (const cluster in metricObj) {
-      if (cluster[key] === 'cpuCost') totalCPU += metricObj['cpuCost'];
-      if (cluster[key] === 'ramCost') totalRAM += metricObj['ramCost'];
-      if (cluster[key] === 'pvCost') totalPV += metricObj['pvCost'];
+  // create function to access values associated with each type of cost and sum up totals
+  const getCosts = (obj) => {
+    for (const key in obj) {
+      if (key === 'cpuCost') totalCPU += obj['cpuCost'];
+      if (key === 'ramCost') totalRAM += obj['ramCost'];
+      if (key === 'pvCost') totalPV += obj['pvCost'];
+    }
+    console.log('inside func CPU', totalCPU);
+    console.log('inside func RAM', totalRAM);
+    console.log('inside func PV', totalPV);
+  };
+  async function fetchData() {
+    try {
+      // fetch cost data from Kubecost
+      const response = await fetch(costURL);
+      const data = await response.json();
+      const costArray = data.data;
+      console.log('costArray:', costArray);
+      // parse through fetched data
+      costArray.forEach((obj) => {
+        for (const cluster in obj) {
+          getCosts(obj[cluster]);
+        }
+      });
+    } catch (err) {
+      // catch any errors
+      console.log('error in fetching cost data: ', err);
     }
   }
-  const costsData = {
-    'CPU Cost': totalCPU,
-    'RAM Cost': totalRAM,
-    'PV Cost': totalPV
-  };
-  // setCosts(costsData);
+  fetchData();
+  console.log('CPU', totalCPU);
+  console.log('RAM', totalRAM);
+  console.log('PV', totalPV);
   return <h1 className="cluster">Cost Dashboard</h1>;
 }
 export default CostAnalysisDashboard;
+
+// const costsData = {
+//   'CPU Cost': totalCPU,
+//   'RAM Cost': totalRAM,
+//   'PV Cost': totalPV
+// };
+// setCosts(costsData);
