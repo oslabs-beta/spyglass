@@ -18,27 +18,49 @@ function CostTable({ totalCPU, totalRAM, totalPV }) {
     createData('CPU', totalCPU),
     createData('RAM', totalRAM),
     createData('PV', totalPV),
-    createData('test', 3.0)
+    createData('Test', '$' + 3.0)
   ];
   return (
-    <TableContainer component={Paper} sx={{ maxWidth: 400 }}>
-      <Table sx={{ maxWidth: 400 }} aria-label="cost table">
+    <TableContainer
+      component={Paper}
+      sx={{ maxWidth: 700, backgroundColor: '#fff' }}
+    >
+      <Table sx={{ maxWidth: 700 }} aria-label="cost table">
+        {/* set heading */}
         <TableHead>
           <TableRow>
-            <TableCell>Cost Categories</TableCell>
-            <TableCell align="right">Costs</TableCell>
+            <TableCell
+              sx={{ fontSize: 30, fontWeight: 'bold', color: '#0074d9' }}
+              align="center"
+            >
+              Cost Categories
+            </TableCell>
+            <TableCell
+              sx={{ fontSize: 30, fontWeight: 'bold', color: '#0074d9' }}
+              align="center"
+            >
+              Total Costs Per Week
+            </TableCell>
           </TableRow>
         </TableHead>
+        {/* set rows */}
         <TableBody>
           {rows.map((row) => (
             <TableRow
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
+              <TableCell
+                sx={{ fontSize: 25 }}
+                align="center"
+                component="th"
+                scope="row"
+              >
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.cost}</TableCell>
+              <TableCell sx={{ fontSize: 25 }} align="center">
+                {row.cost}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

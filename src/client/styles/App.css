@@ -34,7 +34,7 @@ body {
 
 /* icon in sideBar */
 .MuiSvgIcon-root {
-  color: #0074d9;
+  color:  #0074d9 
 }
 
 /* spacing between icon and text in sideBar */
@@ -49,3 +49,11 @@ body {
   margin-top: 4rem;
   margin-bottom: 2rem;
 }
+
+/* styling for cost table container */
+.MuiTableContainer-root	{
+  margin: 0 auto;
+  margin-top: 15rem;
+  padding: 10px;
+}
+
