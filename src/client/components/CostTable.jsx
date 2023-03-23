@@ -28,15 +28,15 @@ function CostTable({ totalCPU, totalRAM, totalPV }) {
       <Table sx={{ maxWidth: 700 }} aria-label="cost table">
         {/* set heading */}
         <TableHead>
-          <TableRow>
+          <TableRow sx={{ borderBottom: '2px solid' }}>
             <TableCell
-              sx={{ fontSize: 30, fontWeight: 'bold', color: '#0074d9' }}
+              sx={{ fontSize: 26, fontWeight: 'bold', color: '#0074d9' }}
               align="center"
             >
               Cost Categories
             </TableCell>
             <TableCell
-              sx={{ fontSize: 30, fontWeight: 'bold', color: '#0074d9' }}
+              sx={{ fontSize: 26, fontWeight: 'bold', color: '#0074d9' }}
               align="center"
             >
               Total Costs Per Week
@@ -51,14 +51,14 @@ function CostTable({ totalCPU, totalRAM, totalPV }) {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell
-                sx={{ fontSize: 25 }}
+                sx={{ fontSize: 22 }}
                 align="center"
                 component="th"
                 scope="row"
               >
                 {row.name}
               </TableCell>
-              <TableCell sx={{ fontSize: 25 }} align="center">
+              <TableCell sx={{ fontSize: 22 }} align="center">
                 {row.cost}
               </TableCell>
             </TableRow>
