@@ -6,21 +6,19 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-function createData(name, cost) {
-  return { name, cost };
-}
-
-const rows = [
-  createData('CPU', 1.0),
-  createData('RAM', 2.0),
-  createData('PV', 3.0),
-  createData('Total Costs', 4.0)
-];
-
-function CostTable() {
+function CostTable({ totalCPU, totalRAM, totalPV }) {
+  const createData = (name, cost) => {
+    return { name, cost };
+  };
+  const rows = [
+    createData('CPU', totalCPU),
+    createData('RAM', totalRAM),
+    createData('PV', totalPV),
+    createData('test', 3.0)
+  ];
   return (
     <TableContainer>
-      <Table sx={{ maxWidth: 200 }} aria-label="cost table">
+      <Table sx={{ maxWidth: 300 }} aria-label="cost table">
         <TableHead>
           <TableRow>
             <TableCell>Cost Categories</TableCell>

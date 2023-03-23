@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import CostTable from '../CostTable';
 // import { terminal } from 'virtual:terminal';
 
 const costURL =
   'http://localhost:9090/model/allocation?aggregate=cluster&window=7d';
 
 function CostAnalysisDashboard() {
-  const [costs, setCosts] = useState({});
+  const [costData, setCostData] = useState({});
   // initialize cost categories
   let totalCPU = 0;
   let totalRAM = 0;
@@ -30,13 +31,14 @@ function CostAnalysisDashboard() {
           getCosts(obj[cluster]);
         }
       });
-      const costsData = {
-        'CPU Cost': totalCPU,
-        'RAM Cost': totalRAM,
-        'PV Cost': totalPV
+      const totalData = {
+        totalCPU,
+        totalRAM,
+        totalPV
       };
+      console.log(totalData);
       // update state with new costsData
-      setCosts(costsData);
+      setCostData(totalData);
     } catch (err) {
       // catch any errors
       console.log('error in fetching cost data: ', err);
@@ -44,6 +46,6 @@ function CostAnalysisDashboard() {
   };
   // invoke async func fetchData defined above
   fetchData();
-  return <div>Cost Dashboard</div>;
+  return <div>{costData && <CostTable costData={costData} />}</div>;
 }
 export default CostAnalysisDashboard;
