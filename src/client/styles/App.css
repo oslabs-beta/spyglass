@@ -5,18 +5,16 @@
 html {
   background: #1a1a1af4;
 }
-body {
-  /* background: #1a1a1af4; */
-}
+
 .main {
-  margin-left: 15rem;
-  margin-top: 5rem;
+  margin-left: 18rem;
+  margin-top: 3rem;
 }
 
 /* styling for navBar*/
 .NavBar {
   align-items: end;
-  padding: 0 2rem;
+  padding: 0.5rem
 }
 .NavBar button:hover {
   color: #0074d9;
@@ -31,7 +29,7 @@ body {
   color: #0074d9;
 }
 .sideBar a span {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   padding: 0.5rem 0;
 }
 
@@ -67,6 +65,13 @@ body {
   height: 100%;
   width: 100%;
 }
+
+/* styling for kubeview container */ 
+.kubeviewContainer{
+  margin-top: 4rem;
+  margin-left: 4rem;
+}
+
 /* link to sign up at bottom of form */
 .formWrapper a {
   color: #fff;

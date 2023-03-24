@@ -13,20 +13,19 @@ function CostTable({ totalCPU, totalRAM, totalPV }) {
   const createData = (name, cost) => {
     return { name, cost };
   };
-  console.log('totalCPU here: ', totalCPU);
   const rows = [
     createData('CPU', '$' + totalCPU),
     createData('RAM', '$' + totalRAM),
-    createData('PV', '$' + totalPV),
-    createData('Test', '$' + 3.0)
+    createData('PV', '$' + totalPV)
   ];
+  console.log(typeof totalCPU);
   return (
     <TableContainer
       component={Paper}
       sx={{ maxWidth: 700, backgroundColor: '#fff' }}
     >
       <Table sx={{ maxWidth: 700 }} aria-label="cost table">
-        {/* set heading */}
+        {/* set heading*/}
         <TableHead>
           <TableRow sx={{ borderBottom: '2px solid' }}>
             <TableCell
