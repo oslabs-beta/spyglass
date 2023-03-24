@@ -7,8 +7,8 @@ html {
 }
 
 .main {
-  margin-left: 20rem;
-  margin-top: 5rem;
+  margin-left: 18rem;
+  margin-top: 3rem;
 }
 
 /* styling for navBar*/
@@ -65,6 +65,13 @@ html {
   height: 100%;
   width: 100%;
 }
+
+/* styling for kubeview container */ 
+.kubeviewContainer{
+  margin-top: 4rem;
+  margin-left: 4rem;
+}
+
 /* link to sign up at bottom of form */
 .formWrapper a {
   color: #fff;
