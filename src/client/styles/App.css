@@ -2,8 +2,11 @@
   padding: 0;
   margin: 0;
 }
+html {
+  background: #1a1a1af4;
+}
 body {
-  background:#1a1a1af4; 
+  /* background: #1a1a1af4; */
 }
 .main {
   margin-left: 15rem;
@@ -45,5 +48,33 @@ body {
 .spyglass-logo {
   height: auto;
   max-width: 100%;
-  margin-top: 4rem; 
+  margin-top: 4rem;
+}
+.formWrapper .spyglass-logo {
+  margin-top: 0;
+}
+.formWrapper {
+  background: #232323;
+  height: 100%;
+  width: 100%;
+}
+/* link to sign up at bottom of form */
+.formWrapper a {
+  color: #fff;
+  text-decoration: none;
+}
+.formWrapper a:hover {
+  color: #0074d9;
+}
+
+#email,
+#password,
+#IP-address,
+#password-label,
+#email-label,
+#IP-address-label {
+  color: #fff;
+}
+.MuiAlert-icon .MuiSvgIcon-root {
+  color: #ef5350;
 }

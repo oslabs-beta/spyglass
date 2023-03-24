@@ -29,11 +29,11 @@ function useProvideAuth() {
     //newUser is user provided from api request
     //for now this is hard-coded with a mock user that is authed
     const newUser = { isAuthed: true };
-    
+
     if (newUser.isAuthed) {
-      setUser(newUser);
       //nav to home, second arg replaces history so users
       //can't click back to signin
+      setUser(newUser);
       navigate('/', { replace: true });
     } else {
       // we'll want to return/ display error message on page
@@ -43,14 +43,18 @@ function useProvideAuth() {
     //*Add fetch request here */
     //newUser is user provided from api request
     //for now this is hard-coded with a mock user obj
-    const newUser = { isAuthed: true };
+    //lines 47-51 fake 
+    const newUser = { isAuthed: false };
+    const { email, password } = credentials;
+    if (email === 'spyglass' && password === 'acet') {
+      newUser.isAuthed = true;
+    }
+
     if (newUser.isAuthed) {
       setUser(newUser);
       //nav to home, second arg replaces history so users
       //can't click back to signin
       navigate('/', { replace: true });
-    } else {
-      // we'll want to return/ display error message on page
     }
   };
 
