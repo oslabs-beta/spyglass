@@ -4,10 +4,8 @@ import { motion } from 'framer-motion';
 
 function AnimatedLogo() {
   return (
-    <motion.div
-      whileHover={{ scale: 1, rotate: 25 }}
-      whileTap={{ scale: 1, rotate: -25 }}
-    >
+    // wrap motion.div around spyglass logo to add rotating animations
+    <motion.div whileHover={{ rotate: 25 }} whileTap={{ rotate: -25 }}>
       <img src={spyglass} className="spyglass-logo" alt="spyglass-logo" />
     </motion.div>
   );

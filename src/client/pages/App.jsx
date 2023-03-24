@@ -1,6 +1,5 @@
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
-import MetricPanel from '../components/MetricPanel';
 import Box from '@mui/material/Box';
 import ClusterMetricsDashboard from '../components/dashboards/ClusterMetricsDashboard';
 import CostAnalysisDashboard from '../components/dashboards/CostAnalysisDashboard';
@@ -9,6 +8,7 @@ import '../styles/App.css';
 
 function App() {
   return (
+    // display app with navbar, sidebar, and routes to dashboards
     <div className="App">
       <NavBar />
       <SideBar />
