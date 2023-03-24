@@ -1,10 +1,12 @@
 import { useContext, createContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { authContext } from './authContext';
 
+//moved to useUseAuthfile
 //creates a context object.
-//Components subscribed to this will
-//read the current context value (ie, auth) from the closest matching Provider
-const authContext = createContext();
+// //Components subscribed to this will
+// //read the current context value (ie, auth) from the closest matching Provider
+// const authContext = createContext();
 
 //provider component that wraps app and makes auth object
 //available to any child component that calls useAuth
@@ -13,11 +15,12 @@ export function AuthProvider({ children }) {
   return <authContext.Provider value={auth}>{children}</authContext.Provider>;
 }
 
-//useAuth custom hook for child compenents to get the auth obj
-export function useAuth() {
-  //useContext hook returns value (ie, auth) from provider component
-  return useContext(authContext);
-}
+//moved to useAuth file
+// //useAuth custom hook for child compenents to get the auth obj
+// export function useAuth() {
+//   //useContext hook returns value (ie, auth) from provider component
+//   return useContext(authContext);
+// }
 
 //Provider hook creates auth object and handles state
 function useProvideAuth() {
@@ -43,10 +46,11 @@ function useProvideAuth() {
     //*Add fetch request here */
     //newUser is user provided from api request
     //for now this is hard-coded with a mock user obj
-    //lines 47-51 fake 
+    //lines 47-51 fake
+
     const newUser = { isAuthed: false };
-    const { email, password } = credentials;
-    if (email === 'spyglass' && password === 'acet') {
+    const { username, password } = credentials;
+    if (username === 'spyglass' && password === 'acet') {
       newUser.isAuthed = true;
     }
 

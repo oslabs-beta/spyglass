@@ -5,7 +5,8 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import AnimatedLogo from '../components/AnimatedLogo';
-import { useAuth } from '../components/auth/AuthProvider';
+//import { useAuth } from '../components/auth/AuthProvider';
+import { useAuth } from '../components/auth/useAuth';
 
 function SignUp() {
   const auth = useAuth();
@@ -13,10 +14,10 @@ function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const email = formData.get('email');
+    const username = formData.get('username');
     const password = formData.get('password');
     const ipAddress = formData.get('IP-address');
-    auth.signUp({ email, password, ipAddress });
+    auth.signUp({ username, password, ipAddress });
   };
 
   return (
@@ -47,10 +48,10 @@ function SignUp() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="username"
+              label="Username"
+              name="username"
+              autoComplete="username"
               autoFocus
             />
             <TextField

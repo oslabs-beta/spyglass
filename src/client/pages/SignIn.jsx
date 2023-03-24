@@ -6,11 +6,11 @@ import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../components/auth/AuthProvider';
+import { Link } from 'react-router-dom';
+//import { useAuth } from '../components/auth/AuthProvider';
+import { useAuth } from '../components/auth/useAuth';
 import AnimatedLogo from '../components/AnimatedLogo';
 import Alert from '@mui/material/Alert';
-import { display } from '@mui/system';
 
 function SignIn() {
   const auth = useAuth();
@@ -19,10 +19,10 @@ function SignIn() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const email = formData.get('email');
+    const username = formData.get('username');
     const password = formData.get('password');
     const ipAddress = formData.get('IP-address');
-    auth.signIn({ email, password, ipAddress });
+    auth.signIn({ username, password, ipAddress });
     if (!auth.user) {
       setLoginFail(true);
     }
@@ -57,16 +57,16 @@ function SignIn() {
               severity="error"
               sx={{ color: '#f4c7c7', display: loginFail ? 'flex' : 'none' }}
             >
-              Invalid email or password. Please retry.
+              Invalid username or password. Please retry.
             </Alert>
             <TextField
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="username"
+              label="Username"
+              name="username"
+              autoComplete="username"
               autoFocus
             />
             <TextField
@@ -88,11 +88,6 @@ function SignIn() {
               Sign In
             </Button>
             <Grid container>
-              {/* <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid> */}
               <Grid item>
                 <Link to="/signup" variant="body2">
                   {"Don't have an account?"}

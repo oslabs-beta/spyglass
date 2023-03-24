@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { AppBar, Toolbar, Button } from '@mui/material';
-import { useAuth } from './auth/AuthProvider';
+//import { useAuth } from './auth/AuthProvider';
+import { useAuth } from './auth/useAuth';
 
 function NavBar() {
   const auth = useAuth();
