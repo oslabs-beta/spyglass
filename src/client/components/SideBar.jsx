@@ -50,7 +50,7 @@ function SideBar() {
             <ListItemIcon>
               <NotificationImportantIcon />
             </ListItemIcon>
-            <Link>
+            <Link to="/cloud">
               <ListItemText primary="Cloud Cluster Metrics" />
             </Link>
           </ListItemButton>
@@ -63,6 +63,17 @@ function SideBar() {
             </ListItemIcon>
             <Link to="/cost">
               <ListItemText primary="Cost Analysis" />
+            </Link>
+          </ListItemButton>
+        </ListItem>
+        {/* Cluster Visualizer List Item */}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <PriceChangeIcon />
+            </ListItemIcon>
+            <Link to="/visual">
+              <ListItemText primary="Cluster Visualizer" />
             </Link>
           </ListItemButton>
         </ListItem>

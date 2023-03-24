@@ -37,7 +37,7 @@ function CostTable({ totalCPU, totalRAM, totalPV }) {
               sx={{ fontSize: 26, fontWeight: 'bold', color: '#0074d9' }}
               align="center"
             >
-              Total Costs Per Month
+              Total Costs Per Week
             </TableCell>
           </TableRow>
         </TableHead>
