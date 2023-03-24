@@ -2,7 +2,6 @@ import * as React from 'react';
 import { AppBar, Toolbar, Button } from '@mui/material';
 import { useAuth } from './auth/AuthProvider';
 
-
 function NavBar() {
   const auth = useAuth();
 
@@ -12,10 +11,12 @@ function NavBar() {
       className="NavBar"
       position="static"
       color="Black"
-      sx={{ boxShadow: 'none' }}
+      sx={{ boxShadow: 'none', height: 80 }}
     >
       <Toolbar>
-        <Button color="White" onClick={auth.signOut}>Sign Out</Button>
+        <Button color="White" onClick={auth.signOut}>
+          Sign Out
+        </Button>
       </Toolbar>
     </AppBar>
   );

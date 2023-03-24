@@ -5,11 +5,9 @@
 html {
   background: #1a1a1af4;
 }
-body {
-  /* background: #1a1a1af4; */
-}
+
 .main {
-  margin-left: 15rem;
+  margin-left: 20rem;
   margin-top: 5rem;
 }
 
@@ -31,7 +29,7 @@ body {
   color: #0074d9;
 }
 .sideBar a span {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   padding: 0.5rem 0;
 }
 

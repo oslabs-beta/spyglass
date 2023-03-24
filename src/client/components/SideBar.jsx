@@ -10,10 +10,11 @@ import {
 import NotificationImportantIcon from '@mui/icons-material/NotificationImportant';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import PriceChangeIcon from '@mui/icons-material/PriceChange';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { Link } from 'react-router-dom';
 import AnimatedLogo from './AnimatedLogo';
 
-const drawerWidth = 240;
+const drawerWidth = 280;
 function SideBar() {
   return (
     // display drawer to spyglass logo and links to cluster metrics, cost analysis, and alerts pages
@@ -70,7 +71,7 @@ function SideBar() {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <PriceChangeIcon />
+              <RemoveRedEyeIcon />
             </ListItemIcon>
             <Link to="/visual">
               <ListItemText primary="Cluster Visualizer" />
