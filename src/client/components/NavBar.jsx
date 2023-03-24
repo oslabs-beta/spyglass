@@ -1,7 +1,11 @@
 import * as React from 'react';
-import { AppBar, Button } from '@mui/material';
+import { AppBar, Toolbar, Button } from '@mui/material';
+import { useAuth } from './auth/AuthProvider';
+
 
 function NavBar() {
+  const auth = useAuth();
+
   return (
     // display navigation bar with "sign out" button at top of screen
     <AppBar
@@ -10,9 +14,9 @@ function NavBar() {
       color="Black"
       sx={{ boxShadow: 'none' }}
     >
-      <Button color="White">
-        <h2>Sign out</h2>
-      </Button>
+      <Toolbar>
+        <Button color="White" onClick={auth.signOut}>Sign Out</Button>
+      </Toolbar>
     </AppBar>
   );
 }

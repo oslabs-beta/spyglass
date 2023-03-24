@@ -3,10 +3,9 @@ import dashboardURLs from '../../../constants';
 import Grid from '@mui/material/Grid';
 
 function ClusterMetricsDashboard() {
-  // create a sub-grid for each metric panel displaying unique url from dashboardURLs
-  const panels = dashboardURLs.map((url) => (
-    <Grid sx={{ boxShadow: 5 }}>
-      <MetricPanel url={url} key={url} />
+  const panels = dashboardURLs.map((url, idx) => (
+    <Grid sx={{ boxShadow: 5 }} key={idx}>
+      <MetricPanel url={url} />
     </Grid>
   ));
   return (
