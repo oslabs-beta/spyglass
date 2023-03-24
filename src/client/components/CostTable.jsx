@@ -15,9 +15,9 @@ function CostTable({ totalCPU, totalRAM, totalPV }) {
   };
   console.log('totalCPU here: ', totalCPU);
   const rows = [
-    createData('CPU', totalCPU),
-    createData('RAM', totalRAM),
-    createData('PV', totalPV),
+    createData('CPU', '$' + totalCPU),
+    createData('RAM', '$' + totalRAM),
+    createData('PV', '$' + totalPV),
     createData('Test', '$' + 3.0)
   ];
   return (

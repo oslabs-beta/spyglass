@@ -48,6 +48,12 @@ function CostAnalysisDashboard() {
     fetchData();
   }, []);
   console.log('costData', costData);
-  return <div>{costData && <CostTable costData={costData} />}</div>;
+  // render cost table only if we have successfuly retrieved data from Kubecost
+  return (
+    <div>
+      <h1></h1>
+      {costData && <CostTable costData={costData} />}
+    </div>
+  );
 }
 export default CostAnalysisDashboard;
