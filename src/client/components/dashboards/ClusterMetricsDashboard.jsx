@@ -9,6 +9,7 @@ function ClusterMetricsDashboard() {
     </Grid>
   ));
   return (
+    // display panels in a grid container
     <Grid
       className="clusterMetricsDashboard"
       container

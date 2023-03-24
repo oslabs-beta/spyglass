@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {
-  Toolbar,
   Drawer,
   ListItemText,
   List,
@@ -17,15 +16,14 @@ import AnimatedLogo from './AnimatedLogo';
 const drawerWidth = 240;
 function SideBar() {
   return (
+    // display drawer to spyglass logo and links to cluster metrics, cost analysis, and alerts pages
     <Drawer
       className="sideBar"
       sx={{
         width: drawerWidth,
-        flexShrink: 0,
         '& .MuiDrawer-paper': {
           width: drawerWidth,
           boxSizing: 'border-box',
-          border: 'none',
           bgcolor: '#1a1a1a',
           color: '#fff'
         }
@@ -34,16 +32,26 @@ function SideBar() {
       anchor="left"
     >
       <AnimatedLogo />
-      <Toolbar />
       <List>
-        {/* Cluster Metric List Item */}
+        {/* Local Cluster Metric List Item */}
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
               <BarChartIcon />
             </ListItemIcon>
             <Link to="/">
-              <ListItemText primary="Cluster Metrics" />
+              <ListItemText primary="Local Cluster Metrics" />
+            </Link>
+          </ListItemButton>
+        </ListItem>
+        {/* Cloud Cluster Metrics List Item */}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <NotificationImportantIcon />
+            </ListItemIcon>
+            <Link>
+              <ListItemText primary="Cloud Cluster Metrics" />
             </Link>
           </ListItemButton>
         </ListItem>
@@ -55,17 +63,6 @@ function SideBar() {
             </ListItemIcon>
             <Link to="/cost">
               <ListItemText primary="Cost Analysis" />
-            </Link>
-          </ListItemButton>
-        </ListItem>
-        {/* Alerts List Item */}
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <NotificationImportantIcon />
-            </ListItemIcon>
-            <Link>
-              <ListItemText primary="Alerts" />
             </Link>
           </ListItemButton>
         </ListItem>
