@@ -13,12 +13,10 @@ function CostTable({ totalCPU, totalRAM, totalPV }) {
   const createData = (name, cost) => {
     return { name, cost };
   };
-  console.log('totalCPU here: ', totalCPU);
   const rows = [
     createData('CPU', '$' + totalCPU),
     createData('RAM', '$' + totalRAM),
-    createData('PV', '$' + totalPV),
-    createData('Test', '$' + 3.0)
+    createData('PV', '$' + totalPV)
   ];
   return (
     <TableContainer
@@ -39,7 +37,7 @@ function CostTable({ totalCPU, totalRAM, totalPV }) {
               sx={{ fontSize: 26, fontWeight: 'bold', color: '#0074d9' }}
               align="center"
             >
-              Total Costs Per Week
+              Total Costs Per Month
             </TableCell>
           </TableRow>
         </TableHead>

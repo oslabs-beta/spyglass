@@ -52,7 +52,13 @@ function CostAnalysisDashboard() {
   return (
     <div>
       <h1></h1>
-      {costData && <CostTable costData={costData} />}
+      {costData && (
+        <CostTable
+          totalCPU={costData.totalCPU}
+          totalRAM={costData.totalRAM}
+          totalPV={costData.totalPV}
+        />
+      )}
     </div>
   );
 }
