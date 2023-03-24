@@ -10,15 +10,21 @@ import {
 } from '@mui/material';
 
 function CostTable({ totalCPU, totalRAM, totalPV }) {
+  // calculate monthly costs
+  const monthlyCPU = totalCPU * 4;
+  const monthlyRAM = totalRAM * 4;
+  const monthlyPV = totalPV * 4;
+  const monthlyTotal = monthlyCPU + monthlyRAM + monthlyPV;
+  // create rows
   const createData = (name, cost) => {
     return { name, cost };
   };
   const rows = [
-    createData('CPU', '$' + totalCPU),
-    createData('RAM', '$' + totalRAM),
-    createData('PV', '$' + totalPV)
+    createData('CPU', '$' + monthlyCPU.toFixed(2)),
+    createData('RAM', '$' + monthlyRAM.toFixed(2)),
+    createData('PV', '$' + monthlyPV.toFixed(2)),
+    createData('Total', '$' + monthlyTotal.toFixed(2))
   ];
-  console.log(typeof totalCPU);
   return (
     <TableContainer
       component={Paper}
@@ -38,7 +44,7 @@ function CostTable({ totalCPU, totalRAM, totalPV }) {
               sx={{ fontSize: 26, fontWeight: 'bold', color: '#0074d9' }}
               align="center"
             >
-              Total Costs Per Week
+              Total Costs Per Month
             </TableCell>
           </TableRow>
         </TableHead>
