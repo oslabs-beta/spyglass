@@ -14,8 +14,8 @@ function ClusterMetricsDashboard() {
       className="clusterMetricsDashboard"
       container
       direction="row"
-      rowGap={5}
-      columnGap={5}
+      rowGap={10}
+      columnGap={10}
       justifyContent="center"
       alignItems="center"
     >

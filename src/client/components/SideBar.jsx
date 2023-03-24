@@ -14,7 +14,7 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { Link } from 'react-router-dom';
 import AnimatedLogo from './AnimatedLogo';
 
-const drawerWidth = 280;
+const drawerWidth = 310;
 function SideBar() {
   return (
     // display drawer to spyglass logo and links to cluster metrics, cost analysis, and alerts pages

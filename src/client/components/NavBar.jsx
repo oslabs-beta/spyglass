@@ -15,7 +15,7 @@ function NavBar() {
     >
       <Toolbar>
         <Button color="White" onClick={auth.signOut}>
-          Sign Out
+          <h1>Sign Out</h1>
         </Button>
       </Toolbar>
     </AppBar>
