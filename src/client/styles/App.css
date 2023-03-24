@@ -14,7 +14,7 @@ html {
 /* styling for navBar*/
 .NavBar {
   align-items: end;
-  padding: 0.5rem
+  padding: 0.5rem;
 }
 .NavBar button:hover {
   color: #0074d9;
@@ -35,7 +35,7 @@ html {
 
 /* icon in sideBar */
 .MuiSvgIcon-root {
-  color:  #0074d9 
+  color: #0074d9;
 }
 
 /* spacing between icon and text in sideBar */
@@ -52,7 +52,7 @@ html {
 }
 
 /* styling for cost table container */
-.MuiTableContainer-root	{
+.MuiTableContainer-root {
   margin: 0 auto;
   margin-top: 15rem;
   padding: 5px;
@@ -66,8 +66,8 @@ html {
   width: 100%;
 }
 
-/* styling for kubeview container */ 
-.kubeviewContainer{
+/* styling for kubeview container */
+.kubeviewContainer {
   margin-top: 4rem;
   margin-left: 4rem;
 }
@@ -81,11 +81,11 @@ html {
   color: #0074d9;
 }
 
-#email,
+#username,
 #password,
 #IP-address,
 #password-label,
-#email-label,
+#username-label,
 #IP-address-label {
   color: #fff;
 }

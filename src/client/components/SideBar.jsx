@@ -11,6 +11,7 @@ import NotificationImportantIcon from '@mui/icons-material/NotificationImportant
 import BarChartIcon from '@mui/icons-material/BarChart';
 import PriceChangeIcon from '@mui/icons-material/PriceChange';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import CloudIcon from '@mui/icons-material/Cloud';
 import { Link } from 'react-router-dom';
 import AnimatedLogo from './AnimatedLogo';
 
@@ -49,7 +50,7 @@ function SideBar() {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <NotificationImportantIcon />
+              <CloudIcon />
             </ListItemIcon>
             <Link to="/cloud">
               <ListItemText primary="Cloud Cluster Metrics" />
