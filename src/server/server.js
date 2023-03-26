@@ -3,7 +3,7 @@ import session from 'express-session';
 import passport from 'passport';
 import path from 'path';
 const app = express();
-const PORT = 3000;
+const PORT = 3333;
 
 // dirname resolved
 import { fileURLToPath } from 'url';
@@ -40,8 +40,6 @@ app.use(passport.session());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// serve CSS and JS files from assets folder
-app.use('/', express.static(path.resolve(__dirname, '../assets')));
 
 // confirming that a session cookie is being set
 app.get('/', function(req, res) {

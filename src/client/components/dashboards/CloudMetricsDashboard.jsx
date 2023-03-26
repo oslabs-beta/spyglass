@@ -1,10 +1,9 @@
 import MetricPanel from '../MetricPanel';
-import { localDashboardURLs } from '../../../constants';
-//import localDashboardURLs from '../../../constants';
+import { cloudDashboardURLs } from '../../../constants';
 import Grid from '@mui/material/Grid';
 
-function ClusterMetricsDashboard() {
-  const panels = localDashboardURLs.map((url, idx) => (
+function CloudMetricsDashboard() {
+  const panels = cloudDashboardURLs.map((url, idx) => (
     <Grid sx={{ boxShadow: 5 }} key={idx}>
       <MetricPanel url={url} />
     </Grid>
@@ -12,7 +11,7 @@ function ClusterMetricsDashboard() {
   return (
     // display panels in a grid container
     <Grid
-      className="clusterMetricsDashboard"
+      className="cloudMetricsDashboard"
       container
       direction="row"
       rowGap={2}
@@ -24,4 +23,5 @@ function ClusterMetricsDashboard() {
     </Grid>
   );
 }
-export default ClusterMetricsDashboard;
+
+export default CloudMetricsDashboard;

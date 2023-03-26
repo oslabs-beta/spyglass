@@ -1,59 +1,82 @@
 import * as React from 'react';
-import Toolbar from '@mui/material/Toolbar';
-import Drawer from '@mui/material/Drawer';
 import {
+  Drawer,
   ListItemText,
   List,
   ListItem,
   ListItemButton,
   ListItemIcon
 } from '@mui/material';
-
+import NotificationImportantIcon from '@mui/icons-material/NotificationImportant';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import PriceChangeIcon from '@mui/icons-material/PriceChange';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import CloudIcon from '@mui/icons-material/Cloud';
 import { Link } from 'react-router-dom';
-import spyglass from '../../../assets/logo-no-background.png';
+import AnimatedLogo from './AnimatedLogo';
 
-const drawerWidth = 240;
+const drawerWidth = 290;
 function SideBar() {
   return (
+    // display drawer to spyglass logo and links to cluster metrics, cost analysis, and alerts pages
     <Drawer
       className="sideBar"
       sx={{
         width: drawerWidth,
-        flexShrink: 0,
         '& .MuiDrawer-paper': {
           width: drawerWidth,
           boxSizing: 'border-box',
-          border: 'none',
-          bgcolor: '#132c44',
+          bgcolor: '#1a1a1a',
           color: '#fff'
         }
       }}
       variant="permanent"
       anchor="left"
     >
-      <img src={spyglass} className="spyglass-logo" alt="spyglass-logo" />
-      <Toolbar />
+      <AnimatedLogo />
       <List>
+        {/* Local Cluster Metric List Item */}
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>{/* {icon for} */}</ListItemIcon>
+            <ListItemIcon>
+              <BarChartIcon />
+            </ListItemIcon>
             <Link to="/">
-              <ListItemText primary="Cluster Metrics" />
+              <ListItemText primary="Local Cluster Metrics" />
             </Link>
           </ListItemButton>
         </ListItem>
+        {/* Cloud Cluster Metrics List Item */}
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>{/* {icon for } */}</ListItemIcon>
+            <ListItemIcon>
+              <CloudIcon />
+            </ListItemIcon>
+            <Link to="/cloud">
+              <ListItemText primary="Cloud Cluster Metrics" />
+            </Link>
+          </ListItemButton>
+        </ListItem>
+        {/* Cost Analysis List Item */}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <PriceChangeIcon />
+            </ListItemIcon>
             <Link to="/cost">
               <ListItemText primary="Cost Analysis" />
             </Link>
           </ListItemButton>
         </ListItem>
+        {/* Cluster Visualizer List Item */}
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>{/* {icon for } */}</ListItemIcon>
-            <ListItemText primary="Alerts" />
+            <ListItemIcon>
+              <RemoveRedEyeIcon />
+            </ListItemIcon>
+            <Link to="/visual">
+              <ListItemText primary="Cluster Visualizer" />
+            </Link>
           </ListItemButton>
         </ListItem>
       </List>

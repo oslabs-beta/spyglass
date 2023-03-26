@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './pages/App';
-import Login from './pages/Login';
-import './styles/index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material';
 
@@ -12,20 +10,11 @@ const theme = createTheme({
     White: {
       main: '#fff'
     },
-    DarkGray: {
-      main: '#4d4d4d'
-    },
-    LightGray: {
-      main: '#e0e0e0'
+    Black: {
+      main: '#1a1a1a'
     },
     Gray: {
       main: '#c6cdd2'
-    },
-    DarkBlue: {
-      main: '#132c44'
-    },
-    LightBlue: {
-      main: '#0074d9'
     }
   }
 });

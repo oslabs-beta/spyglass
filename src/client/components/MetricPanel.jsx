@@ -1,7 +1,8 @@
 function MetricPanel({ url }) {
   return (
+    // display metrics retrieved from Grafana in an iframe
     <div className="metric-panel">
-      <iframe src={url} width="600" height="300"></iframe>
+      <iframe src={url} width="500" height="375"></iframe>
     </div>
   );
 }
