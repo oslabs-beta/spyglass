@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.NavBar {
+  align-items: end;
+  padding: 0 2rem;
+}
+body {
+  background: radial-gradient(#c6cdd2, #132c44);
+}
+.main {
+  margin-left: 240px;
+  margin-top: 100px;
+}
+.sideBar a {
+  text-decoration: none;
+  color: #fff;
+}
