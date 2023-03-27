@@ -5,7 +5,8 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import AnimatedLogo from '../components/AnimatedLogo';
-import { useAuth } from '../components/auth/AuthProvider';
+//import { useAuth } from '../components/auth/AuthProvider';
+import { useAuth } from '../components/auth/useAuth';
 
 function SignUp() {
   const auth = useAuth();
