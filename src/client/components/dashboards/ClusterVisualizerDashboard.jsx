@@ -3,7 +3,7 @@ function ClusterVisualizerDashboard() {
   return (
     // display graph nodes from Kubeview
     <div className="kubeviewContainer">
-      <iframe src={visualURL} width="1500" height="700"></iframe>
+      <iframe src={visualURL} width="1500" height="800"></iframe>
     </div>
   );
 }
