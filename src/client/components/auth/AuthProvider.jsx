@@ -2,14 +2,12 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authContext } from './authContext';
 
-
 //provider component that wraps app and makes auth object
 //available to any child component that calls useAuth
 export function AuthProvider({ children }) {
   const auth = useProvideAuth();
   return <authContext.Provider value={auth}>{children}</authContext.Provider>;
 }
-
 
 //Provider hook creates auth object and handles state
 function useProvideAuth() {
