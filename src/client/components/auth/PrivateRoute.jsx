@@ -1,4 +1,3 @@
-//import { useAuth } from './AuthProvider';
 import { useAuth } from './useAuth';
 import { Navigate } from 'react-router-dom';
 //PrivateRoute is a wrapper for routes
