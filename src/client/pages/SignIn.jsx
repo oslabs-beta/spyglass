@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../components/auth/AuthProvider';
+import { useAuth } from '../components/auth/useAuth';
 import AnimatedLogo from '../components/AnimatedLogo';
 import Alert from '@mui/material/Alert';
 
@@ -15,7 +15,7 @@ function SignIn() {
   const auth = useAuth();
   const [loginFail, setLoginFail] = useState(false);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const username = formData.get('username');
@@ -56,7 +56,7 @@ function SignIn() {
               severity="error"
               sx={{ color: '#f4c7c7', display: loginFail ? 'flex' : 'none' }}
             >
-              Invalid email or password. Please retry.
+              Invalid username or password. Please retry.
             </Alert>
             <TextField
               margin="normal"
