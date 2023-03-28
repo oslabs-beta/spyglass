@@ -1,6 +1,6 @@
-const localClusterIP = import.meta.env.VITE_LOCAL_CLUSTER_IP;
-const localClusterName = import.meta.env.VITE_LOCAL_CLUSTER_NAME;
-const localKubecostIP = import.meta.env.VITE_LOCAL_KUBECOST_IP;
+const localClusterIP = import.meta.env.VITE_LOCALCLUSTERIP;
+const localClusterName = import.meta.env.VITE_LOCALCLUSTERNAME;
+const localKubecostIP = import.meta.env.VITE_LOCALKUBECOSTIP;
 
 console.log('localClusterIP: ', localClusterIP); // returns undefined
 console.log('localClusterName: ', localClusterName); // returns undefined
