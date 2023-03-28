@@ -1,10 +1,11 @@
-import express from 'express';
+import express , {Request, Response, NextFunction} from 'express';
 import session from 'express-session';
 import passport from 'passport';
 import path from 'path';
 import cors from 'cors';
 const app = express();
 const port = 3333;
+
 
 // dirname resolved
 import { fileURLToPath } from 'url';
@@ -46,7 +47,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // confirming that a session cookie is being set
-app.get('/', function (req, res) {
+app.get('/', (req: Request, res: Response) => {
   res.send('Session info ' + JSON.stringify(req.session));
 });
 
@@ -57,13 +58,13 @@ app.use('/auth', authRouter);
 app.use('*', (req, res) => res.status(404).json('ERROR 404: not found'));
 
 // ********** Global Err Handler ********** //
-app.use((err, req, res) => {
+app.use((err: any, req: Request, res:Response, next: NextFunction) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
     status: 500,
     message: { err: 'An error occurred' }
   };
-  const errorObj = { ...defaultErr, ...err };
+  const errorObj = Object.assign({}, defaultErr, err)
   console.log(errorObj.log);
   return res.status(errorObj.status).json(errorObj.message);
 });

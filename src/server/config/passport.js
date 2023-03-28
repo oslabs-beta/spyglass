@@ -69,4 +69,3 @@ export const passportConfig = function(passport) {
   }
   }));
 };
-

@@ -3,6 +3,5 @@
 // declare controller
 const promController = {};
 
-
 // export controller
 module.exports = promController;

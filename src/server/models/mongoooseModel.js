@@ -16,7 +16,6 @@ const dbConnection = await mongoose.connect(URI, dbOptions)
   .then(() => console.log('Database connected'))
   .catch((error) => console.log(error));
   
-
 // create new session
 const sessionStore = MongoStore.create({
   mongoUrl: URI,
@@ -46,8 +45,8 @@ UserSchema.pre('save', function(next) {
   bcrypt.genSalt(8, function(err, salt) {
     if (err) return next(err);
     // hash the password using our new salt
-    bcrypt.hash(user.local.password, salt, function(err, hash) {
-      if (err) return next(err);
+    bcrypt.hash(user.local.password, salt, function(error, hash) {
+      if (error) return next(error);
       // override the cleartext password with the hashed one
       user.local.password = hash;
       next();
@@ -66,7 +65,5 @@ UserSchema.methods.validPassword = function(password) {
 };
 
 export const User = mongoose.model('user', UserSchema);
-
-
 
 export { URI, dbConnection, sessionStore }

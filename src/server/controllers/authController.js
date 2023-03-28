@@ -6,14 +6,15 @@ authController.test = async (req, res, next) => {
   // console.log("connection: ", User)
   // res.locals.test= User
   // next()
-  console.log('hello');
+  // tslint:disable-next-line:no-console
+
   next();
 };
 
 authController.credSuccess = async (req, res, next) => {
   const username = req.body.username;
 
-  console.log('username: ', username);
+  //console.log('username: ', username);
   try {
     const userData = await User.findOne({ 'local.username': username });
     res.locals.userData = userData;

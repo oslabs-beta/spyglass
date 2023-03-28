@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "es2022",
+        "allowJs": true,
         "esModuleInterop": true,
         "target": "es6",
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "moduleResolution": "node",
         "sourceMap": true,
         "outDir": "dist",
@@ -16,5 +17,8 @@
     },
     "include": [
         "src/**/*"
+    ],
+    "exclude": [
+        "src/client/**/*"
     ]
 }

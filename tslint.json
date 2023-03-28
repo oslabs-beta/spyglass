@@ -3,22 +3,25 @@
     "extends": [
         "tslint:recommended"
     ],
-    "jsRules": {},
+    "jsRules": {
+        "no-console": false,
+        "import-spacing": false
+    },
     "rules": {
         "only-arrow-functions": false ,
         "no-console": false,
         "trailing-comma": [ false ],
         "variable-name": {
-            "options": [
-              "ban-keywords",
-              "check-format",
-              "allow-pascal-case",
-              "allow-leading-underscore",
-              "allow-snake-case",
-              "allow-trailing-underscore",
-              "require-const-for-all-caps"
-            ]
-          }
+  "options": [
+    "ban-keywords",
+    "check-format",
+    "allow-pascal-case",
+    "allow-leading-underscore",
+    "allow-snake-case",
+    "allow-trailing-underscore",
+    "require-const-for-all-caps"
+  ]
+}
 
 
     },

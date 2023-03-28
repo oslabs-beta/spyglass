@@ -14,9 +14,9 @@ function CostAnalysisDashboard() {
   // create function to access values associated with each type of cost and sum up totals
   const getCosts = (obj) => {
     for (const key in obj) {
-      if (key === 'cpuCost') totalCPU += obj['cpuCost'];
-      if (key === 'ramCost') totalRAM += obj['ramCost'];
-      if (key === 'pvCost') totalPV += obj['pvCost'];
+      if (key === 'cpuCost') totalCPU += obj.cpuCost;
+      if (key === 'ramCost') totalRAM += obj.ramCost;
+      if (key === 'pvCost') totalPV += obj.pvCost;
     }
   };
   useEffect(() => {
