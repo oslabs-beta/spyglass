@@ -1,11 +1,19 @@
+const localClusterIP = import.meta.env.VITE_LOCAL_CLUSTER_IP;
+const localClusterName = import.meta.env.VITE_LOCAL_CLUSTER_NAME;
+const localKubecostIP = import.meta.env.VITE_LOCAL_KUBECOST_IP;
+
+console.log('localClusterIP: ', localClusterIP); // returns undefined
+console.log('localClusterName: ', localClusterName); // returns undefined
+console.log('localKubecostIP: ', localKubecostIP); // returns undefined
+
 // array of urls for local cluster (minikube) metrics panel
 const localDashboardURLs = [
-  'http://localhost:8000/d/RfL_sdf4z/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=2',
-  'http://localhost:8000/d/RfL_sdf4z/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=3',
-  'http://localhost:8000/d/RfL_sdf4z/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=5',
-  'http://localhost:8000/d/RfL_sdf4z/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=6',
-  'http://localhost:8000/d/RfL_sdf4z/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=7',
-  'http://localhost:8000/d/RfL_sdf4z/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=8'
+  `http://${localClusterIP}/d/${localClusterName}/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=2`,
+  `http://${localClusterIP}/d/${localClusterName}/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=3`,
+  `http://${localClusterIP}/d/${localClusterName}/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=5`,
+  `http://${localClusterIP}/d/${localClusterName}/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=6`,
+  `http://${localClusterIP}/d/${localClusterName}/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=7`,
+  `http://${localClusterIP}/d/${localClusterName}/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=8`
 ];
 
 // array of urls for cloud cluster on AWS
