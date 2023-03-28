@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../components/auth/useAuth';
 import AnimatedLogo from '../components/AnimatedLogo';
 import Alert from '@mui/material/Alert';
@@ -14,15 +14,17 @@ import Alert from '@mui/material/Alert';
 function SignIn() {
   const auth = useAuth();
   const [loginFail, setLoginFail] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const username = formData.get('username');
     const password = formData.get('password');
-    const ipAddress = formData.get('IP-address');
-    auth.signIn({ username, password, ipAddress });
-    if (!auth.user) {
+    const authedUser = await auth.signIn({ username, password });
+    if (authedUser) {
+      navigate('/', { replace: true });
+    } else {
       setLoginFail(true);
     }
   };
@@ -50,7 +52,6 @@ function SignIn() {
             noValidate
             sx={{ mt: 1 }}
           >
-            {' '}
             <Alert
               variant="outlined"
               severity="error"

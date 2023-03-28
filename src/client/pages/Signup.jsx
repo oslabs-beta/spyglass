@@ -1,23 +1,31 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import AnimatedLogo from '../components/AnimatedLogo';
-//import { useAuth } from '../components/auth/AuthProvider';
 import { useAuth } from '../components/auth/useAuth';
+import { useNavigate } from 'react-router-dom';
+import Alert from '@mui/material/Alert';
 
 function SignUp() {
   const auth = useAuth();
+  const [loginFail, setLoginFail] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const username = formData.get('username');
     const password = formData.get('password');
-    const ipAddress = formData.get('IP-address');
-    auth.signUp({ username, password, ipAddress });
+    const authedUser = await auth.signUp({ username, password });
+    if (authedUser) {
+      navigate('/', { replace: true });
+    } else {
+      setLoginFail(true);
+    }
   };
 
   return (
@@ -44,6 +52,13 @@ function SignUp() {
             noValidate
             sx={{ mt: 1 }}
           >
+            <Alert
+              variant="outlined"
+              severity="error"
+              sx={{ color: '#f4c7c7', display: loginFail ? 'flex' : 'none' }}
+            >
+              Invalid username or password. Please retry.
+            </Alert>
             <TextField
               margin="normal"
               required
@@ -63,16 +78,6 @@ function SignUp() {
               type="password"
               id="password"
               autoComplete="current-password"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="IP-address"
-              label="IP-address"
-              type="IP-address"
-              id="IP-address"
-              autoComplete="current-IP"
             />
             <Button
               type="submit"
