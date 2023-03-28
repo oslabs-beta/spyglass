@@ -1,0 +1,26 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "only-arrow-functions": false ,
+        "no-console": false,
+        "trailing-comma": [ false ],
+        "variable-name": {
+            "options": [
+              "ban-keywords",
+              "check-format",
+              "allow-pascal-case",
+              "allow-leading-underscore",
+              "allow-snake-case",
+              "allow-trailing-underscore",
+              "require-const-for-all-caps"
+            ]
+          }
+
+
+    },
+    "rulesDirectory": []
+}

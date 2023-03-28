@@ -4,7 +4,7 @@ import passport from 'passport';
 import path from 'path';
 import cors from 'cors';
 const app = express();
-const PORT = 3333;
+const port = 3333;
 
 // dirname resolved
 import { fileURLToPath } from 'url';
@@ -68,6 +68,12 @@ app.use((err, req, res) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port: ${PORT}...`);
-});
+// app.listen(port, () => {
+//   // tslint:disable-next-line:no-console
+//   console.log(`Server listening on port: ${port}...`);
+// });
+app.listen( port, () => {
+  // tslint:disable-next-line:no-console
+  console.log( `server started at http://localhost:${ port }` );
+} );
+
