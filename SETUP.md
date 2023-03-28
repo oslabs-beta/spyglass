@@ -1,4 +1,4 @@
-### Spyglass' Setup Instructions
+## Spyglass' Setup Instructions
 
 Clone the Spyglass repo from GitHub to your local machine.
 
@@ -6,32 +6,50 @@ Clone the Spyglass repo from GitHub to your local machine.
 git clone https://github.com/oslabs-beta/spyglass.git
 ```
 
-### Setup Instructions
+## Deploy a local Kubernetes cluster on Minikube
+To get started, you will need to have a Kubernetes cluster. You can create a single-node cluster on your local machine using Minikube. See detailed documentation for Minikube at [link](https://minikube.sigs.k8s.io/docs/start/).
 
-To get started, you will need to have a Kubernetes cluster. If you are new to Kubernetes, we recommend that you create a simple single-node cluster on your machine using Minikube. 
-
-Here are instructions
-See documentation for Minikube at [link](https://minikube.sigs.k8s.io/docs/start/).
+Here are instructions if you have a MacOS: 
 
 1. Install Docker 
 
-2. Start your cluster 
 ```
-minikube start 
+brew install docker
 ```
+
+2. Install Minikube 
+
+```
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-arm64
+sudo install minikube-darwin-arm64 /usr/local/bin/minikube
+
+```
+
+3. Start your cluster 
+
+```
+minikube start --vm-driver=docker 
+```
+
 <br/>
 
-### Helm
+### Install Helm and Kube-Prometheus Stack 
 
-Helm is a package manager for Kubernetes that allows you to easily install and manage applications in your Kubernetes cluster.
+Helm is a package manager for Kubernetes that allows you to easily install and manage applications in your Kubernetes cluster. Install Helm by following the instructions at this [link](https://helm.sh/docs/intro/quickstart/). 
+The kube-prometheus stack is a collection of applications for monitoring Kubernetes clusters. See documentation at [link](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/README.md).
 
-Install Helm by following the instructions at this [link](https://helm.sh/docs/intro/quickstart/).
+
+Here are instructions if you have a MacOS: 
+
+1. Install Helm
+
+```
+brew install helm
+```
 
 <br/>
 
-### Kube-Prometheus Stack
 
-The kube-prometheus stack is a collection of applications for monitoring Kubernetes clusters. See documentation at &nbsp;[link](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/README.md).
 
 Begin by creating a new namespace in your cluster named ```monitoring```:
 
@@ -79,61 +97,8 @@ helm repo add kubeview https://benc-uk.github.io/kubeview/charts
 helm install my-kubeview kubeview/kubeview --version [CURRENT VERSION] --namespace=monitoring
 ```
 
-_Note: replace [CURRENT VERSION] in the above command with the latest version by visiting KubeView's documentation._
-
 <br/>
 
-## Access and Port-Forwarding
-Some components of ```kube-prometheus stack``` come with their own GUIs, which can be accessed via ```kubectl port-forward```.
-
-<br/>
-
-### Prometheus
-      
-```
-kubectl -n monitoring port-forward svc/kubepromstack-kube-prometh-prometheus 30000:9090
-```
-Accessed via http://localhost:30000
-
-<br/>
-
-### Kube State Metrics
-
-```
-kubectl -n monitoring port-forward svc/kubepromstack-kube-state-metrics 30135:8080
-```
-Accessed via http://localhost:30135
-
-<br/>
-
-### Alert Manager
-
-```
-kubectl -n monitoring port-forward svc/kubepromstack-kube-prometh-alertmanager 31000:9093
-```
-Accessed via http://localhost:31000
-
-<br/>
-
-### Grafana
-      
-```
-kubectl -n monitoring port-forward svc/kubepromstack-grafana 3001:3000
-```
-Accessed via http://localhost:3001:3000
-
-_The default ```username:password``` are ```admin:prom-operator```._
-
-<br/>
-
-### OpenCost/KubeCost
-
-```
-kubectl -n kubecost port-forward deployment/kubecost-cost-analyzer 9090
-```
-Accessed via http://localhost:9090
-
-<br/>
 
 # Grafana Configuration
 
