@@ -1,4 +1,4 @@
-## Spyglass' Setup Instructions
+### Spyglass' Setup Instructions
 
 Clone the Spyglass repo from GitHub to your local machine.
 
@@ -7,7 +7,7 @@ git clone https://github.com/oslabs-beta/spyglass.git
 ```
 
 ## Deploy a local Kubernetes cluster on Minikube
-To get started, you will need to have a Kubernetes cluster. You can create a single-node cluster on your local machine using Minikube. See detailed documentation for Minikube at [link](https://minikube.sigs.k8s.io/docs/start/).
+To get started, you will need to have a Kubernetes cluster. You can create a single-node Kubernetes cluster on your local machine using Minikube. Install Minikube using documentation at this [link](https://minikube.sigs.k8s.io/docs/start/).
 
 Here are instructions if you have a MacOS: 
 
@@ -33,11 +33,10 @@ minikube start --vm-driver=docker
 
 <br/>
 
-### Install Helm and Kube-Prometheus Stack 
+## Install Helm and Kube-Prometheus-Stack 
+Helm is a package manager for Kubernetes that manages and packages all the necessary resources for your Kubernetes cluster in a chart. See documentation at this [link](https://helm.sh/docs/intro/quickstart/). 
 
-Helm is a package manager for Kubernetes that allows you to easily install and manage applications in your Kubernetes cluster. Install Helm by following the instructions at this [link](https://helm.sh/docs/intro/quickstart/). 
-The kube-prometheus stack is a collection of applications for monitoring Kubernetes clusters. See documentation at [link](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/README.md).
-
+Kube-Prometheus-Stack is a Helm chart that includes a set of applications to monitor Kubernetes clusters. See documentation at this [link](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/README.md).
 
 Here are instructions if you have a MacOS: 
 
@@ -45,6 +44,18 @@ Here are instructions if you have a MacOS:
 
 ```
 brew install helm
+```
+
+2. Add repo to Helm
+```
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+
+3. Install Kube-Prometheus-Stack 
+
+```
+helm install kubepromstack prometheus-community/kube-prometheus-stack --namespace=monitoring
+
 ```
 
 <br/>
