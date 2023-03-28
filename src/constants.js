@@ -1,12 +1,13 @@
 const localClusterIP = import.meta.env.VITE_LOCALCLUSTERIP;
 const localClusterName = import.meta.env.VITE_LOCALCLUSTERNAME;
-const localKubecostIP = import.meta.env.VITE_LOCALKUBECOSTIP;
 
-console.log('localClusterIP: ', localClusterIP); // returns undefined
-console.log('localClusterName: ', localClusterName); // returns undefined
-console.log('localKubecostIP: ', localKubecostIP); // returns undefined
+// const localKubecostIP = import.meta.env.VITE_LOCALKUBECOSTIP;
+// console.log('localClusterIP: ', localClusterIP); // returns undefined
+// console.log('localClusterName: ', localClusterName); // returns undefined
+// console.log('localKubecostIP: ', localKubecostIP); // returns undefined
 
 // array of urls for local cluster (minikube) metrics panel
+// e.g. http://localhost:8000/d/IMOt5Yf4z/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=2
 const localDashboardURLs = [
   `http://${localClusterIP}/d/${localClusterName}/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=2`,
   `http://${localClusterIP}/d/${localClusterName}/node-exporter-nodes?orgId=1&refresh=30s&viewPanel=3`,
