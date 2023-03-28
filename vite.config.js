@@ -7,7 +7,13 @@ import { resolve } from 'path';
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 8080
+    port: 8080,
+    proxy: {
+      '/auth/**': {
+        target: 'http://localhost:3333',
+        secure: false
+      }
+    }
   }
   // build: {
   //   rollupOptions: {

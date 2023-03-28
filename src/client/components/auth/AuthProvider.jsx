@@ -14,50 +14,54 @@ function useProvideAuth() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  const signUp = (credentials) => {
-    //*Add fetch request here */
-    //newUser is user provided from api request
-    //for now this is hard-coded with a mock user that is authed
+  //signUp method creates user in DB,
+  //if account is valid, update user in state and return user
+  const signUp = async (credentials) => {
+    const response = await fetch('http://localhost:3333/auth/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'Application/JSON'
+      },
+      body: JSON.stringify(credentials)
+    });
 
-    const newUser = { isAuthed: true };
+    const newUser = await response.json();
 
-    if (newUser.isAuthed) {
-      //nav to home, second arg replaces history so users
-      //can't click back to signin
+    if (typeof newUser === 'object') {
       setUser(newUser);
-      navigate('/', { replace: true });
+      return newUser;
     } else {
-      // we'll want to return/ display error message on page
+      return null;
     }
   };
-  const signIn = (credentials) => {
-    //*Add fetch request here */
-    //newUser is user provided from api request
-    //for now this is hard-coded with a mock user obj
-    //lines 47-51 fake
+  //signin method verifies user
+  //if account is valid, update user in state and return user
+  const signIn = async (credentials) => {
+    const response = await fetch('http://localhost:3333/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'Application/JSON'
+      },
+      body: JSON.stringify(credentials)
+    });
 
-    const newUser = { isAuthed: false };
-    const { username, password } = credentials;
-    if (username === 'spyglass' && password === 'acet') {
-      newUser.isAuthed = true;
-    }
+    const newUser = await response.json();
 
-    if (newUser.isAuthed) {
+    if (typeof newUser === 'object') {
       setUser(newUser);
-      //nav to home, second arg replaces history so users
-      //can't click back to signin
-      navigate('/', { replace: true });
+      return newUser;
+    } else {
+      return null;
     }
   };
 
+  //signout, sets user to null and returns to signin page
   const signOut = () => {
-    //make fetch here if we need to update user status in DB
-    //credentials will be on user
     setUser(null);
     navigate('/signin', { replace: true });
   };
 
-  //return auth object and auth methods
+  //useProvideAuth return auth object and auth methods
   return {
     user,
     signUp,
