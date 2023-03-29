@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 
 function CostTable({ totalCPU, totalRAM, totalPV }) {
-  // calculate monthly costs
+  // calculate estimated monthly costs based data retrieved from Kubecost
   const monthlyCPU = totalCPU * 4;
   const monthlyRAM = totalRAM * 4;
   const monthlyPV = totalPV * 4;
@@ -31,7 +31,7 @@ function CostTable({ totalCPU, totalRAM, totalPV }) {
       sx={{ maxWidth: 700, backgroundColor: '#fff' }}
     >
       <Table sx={{ maxWidth: 700 }} aria-label="cost table">
-        {/* set heading*/}
+        {/* set heading in table*/}
         <TableHead>
           <TableRow sx={{ borderBottom: '2px solid' }}>
             <TableCell
@@ -48,7 +48,7 @@ function CostTable({ totalCPU, totalRAM, totalPV }) {
             </TableCell>
           </TableRow>
         </TableHead>
-        {/* set rows */}
+        {/* set rows in table*/}
         <TableBody>
           {rows.map((row) => (
             <TableRow

@@ -9,7 +9,7 @@ function CloudMetricsDashboard() {
     </Grid>
   ));
   return (
-    // display panels in a grid container
+    // display panels for a cloud cluster in a grid container
     <Grid
       className="cloudMetricsDashboard"
       container

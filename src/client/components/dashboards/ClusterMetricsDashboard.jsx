@@ -1,6 +1,5 @@
 import MetricPanel from '../MetricPanel';
 import { localDashboardURLs } from '../../../constants';
-//import localDashboardURLs from '../../../constants';
 import Grid from '@mui/material/Grid';
 
 function ClusterMetricsDashboard() {
@@ -10,7 +9,7 @@ function ClusterMetricsDashboard() {
     </Grid>
   ));
   return (
-    // display panels in a grid container
+    // display panels for a local cluster in a grid container
     <Grid
       className="clusterMetricsDashboard"
       container

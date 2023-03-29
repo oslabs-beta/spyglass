@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import CostTable from '../CostTable';
-// import { terminal } from 'virtual:terminal';
 
 const costURL =
   'http://localhost:9090/model/allocation?aggregate=cluster&window=7d';

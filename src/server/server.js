@@ -1,15 +1,9 @@
 import express from 'express';
 import session from 'express-session';
 import passport from 'passport';
-import path from 'path';
 import cors from 'cors';
 const app = express();
 const PORT = 3333;
-
-// dirname resolved
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // import config file and then configure passport
 import { passportConfig } from './config/passport.js';
@@ -23,7 +17,10 @@ import { sessionStore } from './models/mongoooseModel.js';
 
 app.use(cors());
 
-// setting up passport.js https://youtu.be/J1qXK66k1y4
+// setting up passport.js and session implementation:
+// https://www.digitalocean.com/community/tutorials/easy-node-authentication-setup-and-local#toc-handling-signupregistration
+// https://youtu.be/J1qXK66k1y4
+
 // session initializer
 app.use(
   session({
@@ -45,10 +42,13 @@ app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// ******** //
 // confirming that a session cookie is being set
-app.get('/', function (req, res) {
-  res.send('Session info ' + JSON.stringify(req.session));
-});
+// Sessions not currently functional in auth. Use this for testing
+// app.get('/', function (req, res) {
+//   res.send('Session info ' + JSON.stringify(req.session));
+// });
+// ******** //
 
 // ********** Authentication Router ********** //
 app.use('/auth', authRouter);

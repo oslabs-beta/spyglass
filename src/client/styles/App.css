@@ -1,3 +1,4 @@
+/* styling for general app*/
 * {
   padding: 0;
   margin: 0;
@@ -57,6 +58,14 @@ html {
   margin-top: 15rem;
   padding: 5px;
 }
+
+/* styling for kubeview container */
+.kubeviewContainer {
+  margin-top: 4rem;
+  margin-left: 4rem;
+}
+
+/* styling for logo and form on signin/signup page */
 .formWrapper .spyglass-logo {
   margin-top: 0;
 }
@@ -64,12 +73,6 @@ html {
   background: #232323;
   height: 100%;
   width: 100%;
-}
-
-/* styling for kubeview container */
-.kubeviewContainer {
-  margin-top: 4rem;
-  margin-left: 4rem;
 }
 
 /* link to sign up at bottom of form */
@@ -81,6 +84,7 @@ html {
   color: #0074d9;
 }
 
+/* styling for sign up form */
 #username,
 #password,
 #IP-address,
