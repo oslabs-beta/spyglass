@@ -18,7 +18,7 @@ import AnimatedLogo from './AnimatedLogo';
 const drawerWidth = 290;
 function SideBar() {
   return (
-    // display drawer to spyglass logo and links to cluster metrics, cost analysis, and alerts pages
+    // Drawer displays spyglass logo and links to dashboards
     <Drawer
       className="sideBar"
       sx={{
