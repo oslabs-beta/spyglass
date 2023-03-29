@@ -34,7 +34,7 @@ minikube start --vm-driver=docker
 <br/>
 
 ## Install Helm and Kube-Prometheus-Stack 
-Helm is a package manager for Kubernetes that manages and packages all the necessary resources for your Kubernetes cluster in a chart. See documentation at this [link](https://helm.sh/docs/intro/quickstart/). 
+Helm is a package manager for Kubernetes that manages and packages all the necessary resources for your Kubernetes cluster in a single unit called a chart. See documentation at this [link](https://helm.sh/docs/intro/quickstart/). 
 
 Kube-Prometheus-Stack is a Helm chart that includes a set of applications to monitor Kubernetes clusters. See documentation at this [link](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/README.md).
 
@@ -46,42 +46,34 @@ Here are instructions if you have a MacOS:
 brew install helm
 ```
 
-2. Add repo to Helm
-```
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-```
-
-3. Install Kube-Prometheus-Stack 
-
-```
-helm install kubepromstack prometheus-community/kube-prometheus-stack --namespace=monitoring
-
-```
-
-<br/>
-
-
-
-Begin by creating a new namespace in your cluster named ```monitoring```:
-
-```
-kubectl create namespace monitoring
-```
-
-Add the prometheus-community repo to Helm:
-
+2. Add prometheus-community repo to Helm and update 
 ```
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
 ```
 
-Install kube-prometheus stack:
+3. Create a new namespace in your cluster named ```monitoring```
+
+```
+kubectl create namespace monitoring
+```
+
+4. Install Kube-Prometheus-Stack 
 
 ```
 helm install kubepromstack prometheus-community/kube-prometheus-stack --namespace=monitoring
+
 ```
 
+5. Check progress 
+```
+kubectl get pods --namespace monitoring
+```
 <br/>
+
+
+## Access Grafana 
+
 
 
 ### OpenCost/KubeCost Community Version
