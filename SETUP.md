@@ -81,7 +81,7 @@ kubectl get pods --namespace monitoring
 
 
 ## Access Grafana for cluster health metrics 
-Grafana is an application part of Kube-Prometheus-Stack that provide visualizations for metrics monitoring a Kubernetes cluster. See documentation at this [link](https://grafana.com/grafana/).
+Grafana is an application part of Kube-Prometheus-Stack and provides visualizations for metrics monitoring a Kubernetes cluster. See documentation at this [link](https://grafana.com/grafana/).
 
 1. Edit Grafana's configuration map in order to render visuals correctly in Spyglass.
 ```
@@ -138,4 +138,12 @@ helm install my-kubeview kubeview/kubeview --version 0.1.31 --namespace=monitori
 3. Access Kubeview by port-forwarding to http://localhost:9000 or click "Cluster Visualizer" in Spyglass.
 ```
 kubectl port-forward svc/my-kubeview -n monitoring 9000:80
+```
+
+## Access Prometheus and make custom PROMQL queries 
+Prometheus is another application part of Kube-Prometheus-Stack and scrapes metrics on Kubernetes clusters.
+
+1. Access Prometheus by port-forwarding to http://localhost:7000 
+```
+kubectl port-forward -n monitoring svc/kubepromstack-prometheus 7000:9090
 ```
