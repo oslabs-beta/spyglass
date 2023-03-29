@@ -80,7 +80,7 @@ kubectl get pods --namespace monitoring
 <br/>
 
 
-## Access Grafana 
+## Access Grafana for cluster health metrics 
 Grafana is an application part of Kube-Prometheus-Stack that provide visualizations for metrics monitoring a Kubernetes cluster. See documentation at this [link](https://grafana.com/grafana/).
 
 1. Edit Grafana's configuration map in order to render visuals correctly in Spyglass.
@@ -99,26 +99,43 @@ allow_embedding = true
 kubectl port-forward -n monitoring svc/kubepromstack-grafana 8000:80
 ```
 
-## Access KubeCost
+## Access Kubecost for cost optimization
+Kubecost analyzes CPU, PV, and RAM resource usage on Kubernetes clusters. Using Kubecost, Spyglass helps provide monthly estimates to help you optimize your costs! See documentation at [link](https://docs.kubecost.com/).
 
-KubeCost is a Kubernetes cost monitoring tool upon which VaaS's budget and forecasting features are built upon. See documentation at [link](https://docs.kubecost.com/).
-
+1. Install Kubecost and create a namespace named ```kubecost```
 ```
 helm install kubecost cost-analyzer \
 --repo https://kubecost.github.io/cost-analyzer/ \
 --namespace kubecost --create-namespace \
---set kubecostToken="Q3l0b25nMzMxQGdtYWlsLmNvbQ==xm343yadf98"
---set prometheus.nodeExporter.enabled=false \
---set prometheus.serviceAccounts.nodeExporter.create=false \
---set prometheus.kubeStateMetrics.enabled=false
+--set kubecostToken="Y2luZHljaGF1MTFAZ21haWwuY29txm343yadf98"
+```
+
+2. Retrieve information about the pods running in the ```kubecost``` namespace of your Kubernetes cluster
+```
+kubectl get pods --namespace kubecost
+```
+
+3. Access Kubecost by port-forwarding to http://localhost:9090 or click "Cost Analysis" in Spyglass.
+```
+kubectl port-forward --namespace kubecost deployment/kubecost-cost-analyzer 9090
 ```
 
 <br/>
 
-## Access KubeView
-KubeView is a web-based UI that allows you to view the status of your Kubernetes cluster. See documentation at &nbsp;[link](https://artifacthub.io/packages/helm/kubeview/kubeview?modal=install).
+## Access Kubeview for cluster visualization
+Kubeview provides a graphical representation of a Kubernetes cluster and its resources. See documentation at this [link](https://github.com/benc-uk/kubeview).
 
+1. Add Kubeview repo to Helm
 ```
 helm repo add kubeview https://benc-uk.github.io/kubeview/charts
-helm install my-kubeview kubeview/kubeview --version [CURRENT VERSION] --namespace=monitoring
+```
+
+2. Install Kubeview (Please replace with current version)
+```
+helm install my-kubeview kubeview/kubeview --version 0.1.31 --namespace=monitoring
+```
+
+3. Access Kubeview by port-forwarding to http://localhost:9000 or click "Cluster Visualizer" in Spyglass.
+```
+kubectl port-forward svc/my-kubeview -n monitoring 9000:80
 ```
