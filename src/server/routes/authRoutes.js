@@ -32,11 +32,6 @@ authRouter.post(
   }
 );
 
-// authRouter.get('/', (req, res) => {
-//   res.status(200);
-// });
-
-// on succes route
 // get user info and return via res.status(203).json(res.loclas.userInfo)
 authRouter.get('/credentials', authController.credSuccess, (req, res) => {
   res.status(203).json(res.locals.userData);

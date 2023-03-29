@@ -6,7 +6,7 @@ function NavBar() {
   const auth = useAuth();
 
   return (
-    // display navigation bar with "sign out" button at top of screen
+    // display navigation bar with "sign out" button that has access to auth
     <AppBar
       className="NavBar"
       position="static"

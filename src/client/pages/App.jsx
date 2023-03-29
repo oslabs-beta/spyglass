@@ -8,10 +8,12 @@ import '../styles/App.css';
 
 function App() {
   return (
+    // home page is protected route and requires authorization
     <AuthProvider>
       <Routes>
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        {/* home page contains routes to different dashboards */}
         <Route
           path="/*"
           element={

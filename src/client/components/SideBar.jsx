@@ -7,7 +7,6 @@ import {
   ListItemButton,
   ListItemIcon
 } from '@mui/material';
-import NotificationImportantIcon from '@mui/icons-material/NotificationImportant';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import PriceChangeIcon from '@mui/icons-material/PriceChange';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
@@ -18,7 +17,7 @@ import AnimatedLogo from './AnimatedLogo';
 const drawerWidth = 290;
 function SideBar() {
   return (
-    // display drawer to spyglass logo and links to cluster metrics, cost analysis, and alerts pages
+    // Drawer displays spyglass logo and links to various dashboards
     <Drawer
       className="sideBar"
       sx={{
@@ -35,7 +34,6 @@ function SideBar() {
     >
       <AnimatedLogo />
       <List>
-        {/* Local Cluster Metric List Item */}
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
@@ -46,7 +44,6 @@ function SideBar() {
             </Link>
           </ListItemButton>
         </ListItem>
-        {/* Cloud Cluster Metrics List Item */}
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
@@ -57,7 +54,6 @@ function SideBar() {
             </Link>
           </ListItemButton>
         </ListItem>
-        {/* Cost Analysis List Item */}
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
@@ -68,7 +64,6 @@ function SideBar() {
             </Link>
           </ListItemButton>
         </ListItem>
-        {/* Cluster Visualizer List Item */}
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
