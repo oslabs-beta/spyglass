@@ -10,6 +10,8 @@ git clone https://github.com/oslabs-beta/spyglass.git
 MONGO_URI=
 VITE_LOCALCLUSTERIP=
 VITE_LOCALCLUSTERNAME=
+VITE_CLOUDCLUSTERIP=
+VITE_CLOUDCLUSTERNAME=
 ```
 
 Here is an example ENV file: 
@@ -17,6 +19,8 @@ Here is an example ENV file:
 MONGO_URI= "mongodb+srv://dummyAcc:HVcsVJuNv2fTCJJl@spyglassdev.jmhr4fn.mongodb.net/?retryWrites=true&w=majority"
 VITE_LOCALCLUSTERIP=localhost:8000
 VITE_LOCALCLUSTERNAME=IMOt5Yf4z
+VITE_CLOUDCLUSTERIP=aefc1187804224b2389464585a69932b-1354669704.us-west-2.elb.amazonaws.com
+VITE_CLOUDCLUSTERNAME=DtgSFtBVk
 ```
 
 <br/>
