@@ -3,8 +3,10 @@ import mongoose from 'mongoose';
 import MongoStore from 'connect-mongo';
 import bcrypt from 'bcrypt';
 
-const URI = import.meta.env.VITE_MONGO_URI;
+import * as dotenv from 'dotenv';
+dotenv.config();
 
+const URI = process.env.MONGO_URI;
 // define new database options
 const dbOptions = {
   useNewUrlParser: true,

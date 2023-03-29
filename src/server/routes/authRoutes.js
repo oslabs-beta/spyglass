@@ -4,7 +4,6 @@ import passport from 'passport';
 export const authRouter = express.Router();
 
 import { authController } from '../controllers/authController.js';
-
 // Process login form
 authRouter.post(
   '/login',
@@ -21,7 +20,6 @@ authRouter.post(
 // Process signup form
 authRouter.post(
   '/signup',
-  authController.test,
   passport.authenticate('local-signup', {
     successMessage: 'authenticated',
     failureRedirect: '/auth/signupfailure'
