@@ -1,0 +1,98 @@
+/* styling for general app*/
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  background: #1a1a1af4;
+}
+
+.main {
+  margin-left: 18rem;
+  margin-top: 3rem;
+}
+
+/* styling for navBar*/
+.NavBar {
+  align-items: end;
+  padding: 0.5rem;
+}
+.NavBar button:hover {
+  color: #0074d9;
+}
+
+/* styling for links in sideBar */
+.sideBar a {
+  text-decoration: none;
+  color: #fff;
+}
+.sideBar a:hover {
+  color: #0074d9;
+}
+.sideBar a span {
+  font-size: 1.6rem;
+  padding: 0.5rem 0;
+}
+
+/* icon in sideBar */
+.MuiSvgIcon-root {
+  color: #0074d9;
+}
+
+/* spacing between icon and text in sideBar */
+.MuiButtonBase-root div {
+  min-width: 35px;
+}
+
+/* styling for spgylass logo in sideBar */
+.spyglass-logo {
+  height: auto;
+  max-width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+/* styling for cost table container */
+.MuiTableContainer-root {
+  margin: 0 auto;
+  margin-top: 15rem;
+  padding: 5px;
+}
+
+/* styling for kubeview container */
+.kubeviewContainer {
+  margin-top: 4rem;
+  margin-left: 4rem;
+}
+
+/* styling for logo and form on signin/signup page */
+.formWrapper .spyglass-logo {
+  margin-top: 0;
+}
+.formWrapper {
+  background: #232323;
+  height: 100%;
+  width: 100%;
+}
+
+/* link to sign up at bottom of form */
+.formWrapper a {
+  color: #fff;
+  text-decoration: none;
+}
+.formWrapper a:hover {
+  color: #0074d9;
+}
+
+/* styling for sign up form */
+#username,
+#password,
+#IP-address,
+#password-label,
+#username-label,
+#IP-address-label {
+  color: #fff;
+}
+.MuiAlert-icon .MuiSvgIcon-root {
+  color: #ef5350;
+}
