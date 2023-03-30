@@ -31,6 +31,8 @@ Check out our [website](https://spyglass-website.vercel.app/)!
 - Analyze key metrics related to cluster performance with a suite of detailed charts, graphs, and other visualized data powered by Prometheus and Grafana
 - Efficiently manage Kubernetes expenses with monthly cost projections powered by Kubecost
 
+<br/>
+
 ## Getting Started
 
 Check out our detailed [setup](/SETUP.md) guide to get started!
