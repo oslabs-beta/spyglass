@@ -7,9 +7,8 @@ All code changes happen through Github Pull Requests and we actively welcome the
 ## Pull Requests
 1. Fork the repo and create your feature branch.
 2. If you've added code that should be tested, add tests.
-3. Make sure your code lints.
-4. Issue that pull request!
-5. Specify what you changed in details when you are doing pull request.
+3. Issue that pull request!
+4. Specify what you changed in details when you are doing pull request.
 
 Note: Any contributions you make will be under the MIT Software License and your submissions are understood to be under the same that covers the project. Please reach out to the team if you have any questions.
 
