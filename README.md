@@ -27,9 +27,9 @@ Check out our [website](https://spyglass-website.vercel.app/)!
 ## Features
 
 - Monitor cluster performance and cost analysis in a centralized dashboard
-- Visualize clusters and resources with an intuitive and user-friendly interface provided by KubeView
-- Analyze key metrics related to cluster performance with a suite of detailed charts, graphs, gauges, histograms and other visualized data powered by Prometheus and Grafana
-- Efficiently manage Kubernetes expenses with monthly cost projections powered by KubeCost
+- Visualize clusters and resources with an intuitive and user-friendly interface provided by Kubeview
+- Analyze key metrics related to cluster performance with a suite of detailed charts, graphs, and other visualized data powered by Prometheus and Grafana
+- Efficiently manage Kubernetes expenses with monthly cost projections powered by Kubecost
 
 ## Getting Started
 
