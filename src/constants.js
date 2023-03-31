@@ -16,13 +16,14 @@ const localDashboardURLs = [
 ];
 
 // array of urls for cloud cluster (AWS) metrics panels from Grafana
-// e.g. http://aefc1187804224b2389464585a69932b-1354669704.us-west-2.elb.amazonaws.com/d-solo/DtgSFtBVk/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1679688700219&to=1679689600219&panelId=6
+// e.g. http://a5f23f08f01e34e6c883489e8cfef487-101927145.us-east-1.elb.amazonaws.com/d/bgPQC9f4z/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1680212302956&to=1680213202956&viewPanel=32
 const cloudDashboardURLs = [
-  `http://${cloudClusterIP}/d-solo/${cloudClusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1679688700219&to=1679689600219&panelId=6`,
-  `http://${cloudClusterIP}/d-solo/${cloudClusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1679688882557&to=1679689782557&panelId=24`,
-  `http://${cloudClusterIP}/d-solo/${cloudClusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1679688942902&to=1679689842902&panelId=27`,
-  `http://${cloudClusterIP}/d-solo/${cloudClusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1679688989408&to=1679689889408&panelId=28`,
-  `http://${cloudClusterIP}/d-solo/${cloudClusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1679689057884&to=1679689957884&panelId=28`,
-  `http://${cloudClusterIP}/d-solo/${cloudClusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1679689106850&to=1679690006850&panelId=30`
+  `http://${cloudClusterIP}/d/${cloudClusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1680211308893&to=1680212208893&viewPanel=32`,
+  `http://${cloudClusterIP}/d/${cloudClusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1680211595011&to=1680212495011&viewPanel=4`,
+  `http://${cloudClusterIP}/d/${cloudClusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1680211712351&to=1680212612351&viewPanel=24`,
+  `http://${cloudClusterIP}/d/${cloudClusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1680211731333&to=1680212631333&viewPanel=28`,
+  `http://${cloudClusterIP}/d/${cloudClusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1680211731333&to=1680212631333&viewPanel=30`,
+  `http://${cloudClusterIP}/d/${cloudClusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1680211224252&to=1680212124252&viewPanel=6`
 ];
+
 export { localDashboardURLs, cloudDashboardURLs };
