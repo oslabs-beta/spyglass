@@ -1,8 +1,9 @@
-/* styling for general app*/
+/* styling for general app */
 * {
   padding: 0;
   margin: 0;
 }
+
 html {
   background: #1a1a1af4;
 }
@@ -12,13 +13,21 @@ html {
   margin-top: 3rem;
 }
 
-/* styling for navBar*/
 .NavBar {
   align-items: end;
   padding: 0.5rem;
 }
+
+.NavBar button {
+  font-size: 0.5rem;
+}
+
 .NavBar button:hover {
   color: #0074d9;
+}
+
+.NavButton {
+  font-size: 1.0rem;
 }
 
 /* styling for links in sideBar */
@@ -30,7 +39,7 @@ html {
   color: #0074d9;
 }
 .sideBar a span {
-  font-size: 1.6rem;
+  font-size: 1.0rem;
   padding: 0.5rem 0;
 }
 
@@ -47,7 +56,7 @@ html {
 /* styling for spgylass logo in sideBar */
 .spyglass-logo {
   height: auto;
-  max-width: 100%;
+  max-width: 75%;
   margin-top: 4rem;
   margin-bottom: 2rem;
 }
@@ -95,4 +104,58 @@ html {
 }
 .MuiAlert-icon .MuiSvgIcon-root {
   color: #ef5350;
+}
+
+/* Media queries for mobile devices */
+@media only screen and (max-width: 768px) {
+  .main {
+    margin-left: 0;
+  }
+  .NavBar {
+    padding: 0.2rem;
+  }
+  .sideBar a span {
+    font-size: 0.8rem;
+  }
+  .spyglass-logo {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .MuiTableContainer-root {
+    margin-top: 10rem;
+  }
+  .kubeviewContainer {
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+
+  .NavbarDrawer {
+    color: black;
+  }
+
+}
+
+/* Media queries for larger desktop screens */
+@media only screen and (min-width: 1200px) {
+  .main {
+    margin-left: 20rem;
+    margin-top: 5rem;
+  }
+  .NavBar {
+    padding: 1rem;
+  }
+  .sideBar a span {
+    font-size: 1.2rem;
+  }
+  .spyglass-logo {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
+  .MuiTableContainer-root {
+    margin-top: 20rem;
+  }
+  .kubeviewContainer {
+    margin-top: 5rem;
+    margin-left: 5rem;
+  }
 }
