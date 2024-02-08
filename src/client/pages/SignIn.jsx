@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../components/auth/useAuth';
-import AnimatedLogo from '../components/AnimatedLogo';
+import Logo from '../components/Logo';
 import Alert from '@mui/material/Alert';
 
 function SignIn() {
@@ -45,7 +45,7 @@ function SignIn() {
             boxShadow: 15
           }}
         >
-          <AnimatedLogo />
+          <Logo />
           <Box
             component="form"
             onSubmit={handleSubmit}

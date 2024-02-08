@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import AnimatedLogo from '../components/AnimatedLogo';
+import Logo from '../components/Logo';
 import { useAuth } from '../components/auth/useAuth';
 import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
@@ -44,7 +44,7 @@ function SignUp() {
             boxShadow: 15
           }}
         >
-          <AnimatedLogo />
+          <Logo />
           <Box
             color="white"
             component="form"
