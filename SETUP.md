@@ -72,9 +72,11 @@ helm repo update
 kubectl create namespace monitoring
 ```
 
-4. Install Kube-Prometheus-Stack 
+4. Install Kube-Prometheus-Stack (run from root of this project)
+
+use custom copy of the values file with the security flag for grafana flipped so you don't have to edit the config map
 ```
-helm install kubepromstack prometheus-community/kube-prometheus-stack --namespace=monitoring
+helm install kubepromstack prometheus-community/kube-prometheus-stack --namespace=monitoring --values=prom-stack-values.yaml
 ```
 
 5. Retrieve information about the pods running in the ```monitoring``` namespace of your Kubernetes cluster
@@ -84,7 +86,7 @@ kubectl get pods --namespace monitoring
 <br/>
 
 
-## Access Grafana for cluster health metrics 
+## [skip] Access Grafana for cluster health metrics (given flag for values when creating we no longer need this)
 Grafana is an application part of Kube-Prometheus-Stack and provides visualizations for metrics monitoring a Kubernetes cluster. See [documentation](https://grafana.com/grafana/) for more information.
 
 1. Edit Grafana's configuration map in order to render visuals correctly in Spyglass.
