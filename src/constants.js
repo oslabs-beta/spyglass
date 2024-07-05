@@ -19,6 +19,7 @@ function pickPanels(clusterIP, clusterName, viewPanels) {
   for (panel in viewPanels) {
     urls.push(`http://${clusterIP}/d/${clusterName}/kubernetes-cluster-monitoring-via-prometheus?orgId=1&refresh=10s&from=1680211308893&to=1680212208893&viewPanel=${panel}`)
   }
+  return urls;
 }
 
 dashboardURLs = pickPanels(clusterIP, clusterName, viewPanels)
