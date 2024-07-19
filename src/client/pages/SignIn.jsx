@@ -3,14 +3,15 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Logo from '../components/Logo';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../components/auth/useAuth';
-import { useNavigate } from 'react-router-dom';
+import Logo from '../components/Logo';
 import Alert from '@mui/material/Alert';
 
-function SignUp() {
+function SignIn() {
   const auth = useAuth();
   const [loginFail, setLoginFail] = useState(false);
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ function SignUp() {
     const formData = new FormData(event.currentTarget);
     const username = formData.get('username');
     const password = formData.get('password');
-    const authedUser = await auth.signUp({ username, password });
+    const authedUser = await auth.signIn({ username, password });
     if (authedUser) {
       navigate('/', { replace: true });
     } else {
@@ -46,7 +47,6 @@ function SignUp() {
         >
           <Logo />
           <Box
-            color="white"
             component="form"
             onSubmit={handleSubmit}
             noValidate
@@ -85,8 +85,15 @@ function SignUp() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign up
+              Sign In
             </Button>
+            <Grid container>
+              <Grid item>
+                <Link to="/signup" variant="body2">
+                  {"Don't have an account?"}
+                </Link>
+              </Grid>
+            </Grid>
           </Box>
         </Box>
       </Container>
@@ -94,4 +101,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignIn;
