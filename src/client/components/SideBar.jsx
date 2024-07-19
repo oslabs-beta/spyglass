@@ -12,19 +12,10 @@ import PriceChangeIcon from '@mui/icons-material/PriceChange';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import CloudIcon from '@mui/icons-material/Cloud';
 import { Link } from 'react-router-dom';
-import Logo from './Logo';
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import AnimatedLogo from './AnimatedLogo';
 
 const drawerWidth = 290;
 function SideBar() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
-  if (isMobile) {
-    return null; // Hide the sidebar on mobile
-  }
-
   return (
     // Drawer displays spyglass logo and links to various dashboards
     <Drawer
@@ -41,7 +32,7 @@ function SideBar() {
       variant="permanent"
       anchor="left"
     >
-      <Logo />
+      <AnimatedLogo />
       <List>
         <ListItem disablePadding>
           <ListItemButton>
