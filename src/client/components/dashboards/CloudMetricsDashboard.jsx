@@ -1,9 +1,9 @@
 import MetricPanel from '../MetricPanel';
-import { cloudDashboardURLs } from '../../../constants';
+import { dashboardURLs } from '../../../constants';
 import Grid from '@mui/material/Grid';
 
 function CloudMetricsDashboard() {
-  const panels = cloudDashboardURLs.map((url, idx) => (
+  const panels = dashboardURLs.map((url, idx) => (
     <Grid sx={{ boxShadow: 5 }} key={idx}>
       <MetricPanel url={url} />
     </Grid>

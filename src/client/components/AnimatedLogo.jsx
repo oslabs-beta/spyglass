@@ -6,9 +6,9 @@ function AnimatedLogo() {
   return (
     // wrap motion.div around spyglass logo to add rotating animations
     <motion.div
-      animate={{ rotate: 360 }}
-      whileHover={{ rotate: -360 }}
-      transition={{ duration: 2 }}
+      animate={{ rotate: 0 }}
+      whileHover={{ rotate: 0 }}
+      transition={{ duration: 0 }}
     >
       <img src={spyglass} className="spyglass-logo" alt="spyglass-logo" />
     </motion.div>

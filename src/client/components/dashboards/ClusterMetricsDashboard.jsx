@@ -1,9 +1,9 @@
 import MetricPanel from '../MetricPanel';
-import { localDashboardURLs } from '../../../constants';
+import { dashboardURLs } from '../../../constants';
 import Grid from '@mui/material/Grid';
 
 function ClusterMetricsDashboard() {
-  const panels = localDashboardURLs.map((url, idx) => (
+  const panels = dashboardURLs.map((url, idx) => (
     <Grid sx={{ boxShadow: 5 }} key={idx}>
       <MetricPanel url={url} />
     </Grid>

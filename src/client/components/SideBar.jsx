@@ -10,7 +10,7 @@ import {
 import BarChartIcon from '@mui/icons-material/BarChart';
 import PriceChangeIcon from '@mui/icons-material/PriceChange';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import CloudIcon from '@mui/icons-material/Cloud';
+// import CloudIcon from '@mui/icons-material/Cloud';
 import { Link } from 'react-router-dom';
 import AnimatedLogo from './AnimatedLogo';
 
@@ -40,19 +40,19 @@ function SideBar() {
               <BarChartIcon />
             </ListItemIcon>
             <Link to="/">
-              <ListItemText primary="Local Cluster Metrics" />
+              <ListItemText primary="Cluster Metrics" />
             </Link>
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton>
+          {/* <ListItemButton>
             <ListItemIcon>
               <CloudIcon />
             </ListItemIcon>
             <Link to="/cloud">
               <ListItemText primary="Cloud Cluster Metrics" />
             </Link>
-          </ListItemButton>
+          </ListItemButton> */}
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton>
