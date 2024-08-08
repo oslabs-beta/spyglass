@@ -3,7 +3,7 @@ up:
 
 status:
 	minikube status
-prom:
+intsall-prom:
 	helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 	helm repo update
 	kubectl create namespace monitoring
@@ -13,10 +13,10 @@ check-prom:
 	kubectl get pods --namespace monitoring
 delete-prom:
 	helm uninstall kubepromstack --namespace=monitoring
-grafana-access:
+prom-access:
 	kubectl port-forward -n monitoring svc/kubepromstack-grafana 8000:80
 
-kubecost:
+install-kubecost:
 	helm install kubecost cost-analyzer \
 	--repo https://kubecost.github.io/cost-analyzer/ \
 	--namespace kubecost --create-namespace \
@@ -28,7 +28,7 @@ kubecost-access:
 check-kubecost:
 	kubectl get pods --namespace kubecost
 
-kubeview:
+install-kubeview:
 	helm repo add kubeview https://benc-uk.github.io/kubeview/charts
 	helm install my-kubeview kubeview/kubeview --version 0.1.31 --namespace=monitoring
 

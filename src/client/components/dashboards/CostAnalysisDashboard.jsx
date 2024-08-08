@@ -25,6 +25,7 @@ function CostAnalysisDashboard() {
         const response = await fetch(costURL);
         const data = await response.json();
         const costArray = data.data;
+
         // parse through fetched data
         costArray.forEach((obj) => {
           for (const cluster in obj) {
@@ -46,7 +47,7 @@ function CostAnalysisDashboard() {
     // invoke async func fetchData defined above
     fetchData();
   }, []);
-  console.log('costData', costData);
+
   // render cost table only if we have successfuly retrieved data from Kubecost
   return (
     <div>
